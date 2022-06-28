@@ -1,10 +1,10 @@
 import React from "react";
 import Button from "./button";
-import "../css/preview.scss";
+import styles from "../css/preview.module.scss";
 
 export default function Preview(props) {
   return (
-    <div className="preview">
+    <div className={styles.preview}>
       <img src={props.image} alt="" />
       <h4>{props.title}</h4>
       <p>{props.body}</p>

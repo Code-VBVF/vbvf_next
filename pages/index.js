@@ -1,16 +1,16 @@
 import React from "react";
-import "../css/home.scss";
-import Button from "../components/button";
+import homePage from "../src/css/homePage.module.scss";
+import Button from "../src/components/button";
 
-import { getOrdinalNum, nthWeekdayOfMonth } from "../util/index";
+import { getOrdinalNum, nthWeekdayOfMonth } from "../src/util/index";
 // import BibleTeaching from "../images/home_page/mike_bible_teaching.jpeg";
-import DailyBread from "../images/home_page/daily_bread.jpeg";
-import MeetandGreet from "../images/home_page/MeetandGreet.jpg";
-import BaptismPhoto from "../images/home_page/anthony_baptism_horizontal_c.jpg";
+import DailyBread from "../public/images/home_page/daily_bread.jpeg";
+import MeetandGreet from "../public/images/home_page/MeetandGreet.jpg";
+import BaptismPhoto from "../public/images/home_page/anthony_baptism_horizontal_c.jpg";
 
-import Preview from "../components/preview";
-import AlertBubble from "../components/alert-bubble";
-import { livestreamHappeningNow } from "../util";
+import Preview from "../src/components/preview";
+import AlertBubble from "../src/components/alert-bubble";
+import { livestreamHappeningNow } from "../src/util";
 
 const monthNames = [
   "January",
@@ -84,13 +84,13 @@ const Home = () => {
   // }, [query]);
 
   return (
-    <div className="home">
-      <div className="main-header">
-        <AlertBubble />
-        <div className="main-header-titles">
+    <div className={homePage.home}>
+      <div className={homePage.mainHeader}>
+        {/* <AlertBubble /> */}
+        <div className={homePage.mainHeaderTitles}>
           <h1>Find Joy in the Word</h1>
           <h2>John 1:1</h2>
-          <div className="main-header-buttons">
+          <div className={homePage.mainHeaderButtons}>
             <Button
               link="/livestream"
               title={liveStreamButtonText()}
@@ -107,7 +107,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="preview-container">
+      <div className={homePage.previewContainer}>
         {/* If the third Sunday has already come this month then display the Bible Teaching preview
            rather than the Get Baptized preview */}
         {/* {nthSundayHasCome(BAPTISM_WEEK_NUM) ? (

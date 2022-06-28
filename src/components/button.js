@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/button.scss";
+import "../css/button.module.scss";
 
 const Button = (props) => {
   const size = () => {

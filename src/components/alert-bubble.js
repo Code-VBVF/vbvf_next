@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { sanity } from "../util/index";
-import { Link, useLocation } from "react-router-dom";
-import "../css/alert-bubble.scss";
+import { Link } from "next/link";
+import { useRouter } from "next/router";
+import "../css/alert-bubble.module.scss";
 
 export default function AlertBubble() {
   const [announcement, setAnnouncement] = useState();
-  let page = useLocation();
+  let page = useRouter();
+  const params = { currentPage: page.pathname };
 
   //the query beneath pulls in announcements that are not expired which also contain the current page in the whereToDisplay array
   const announcementQuery = `*[_type == "specialAnnouncement" && expirationDate > $now && $currentPage in whereToDisplay ] {
@@ -16,8 +18,6 @@ export default function AlertBubble() {
         whereToDisplay,
         _id
     }`;
-
-  const params = { currentPage: page.pathname };
 
   useEffect(() => {
     sanity
@@ -36,7 +36,7 @@ export default function AlertBubble() {
       className={`alert-bubble ${announcement != null ? "active" : "hidden"}`} //conditionally showing announcement
     >
       {announcement?.alertBubbleText}{" "}
-      <Link to={`${announcement?._id}`}>Read more</Link>
+      <Link to={`/[announcement?._id]`}>Read more</Link>
     </div>
   );
 }
