@@ -16,11 +16,12 @@ import {
   ModalBody,
   ModalFooter,
 } from "reactstrap";
-import { Link } from "react-router-dom";
-import "../css/global-nav.scss";
-import VBVFLogo from "../images/logos/vbvf_logo.png";
+import Link from "next/link";
+import "../css/global-nav.module.scss";
+import VBVFLogo from "../../public/images/logos/vbvf_logo.png";
 import { getMobileOperatingSystem } from "../util/index";
 import Button from "../components/button";
+import Image from "next/image";
 
 const GlobalNav = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,7 +40,7 @@ const GlobalNav = (props) => {
     <div>
       <Navbar className="menu-bar" color="light" light expand="lg">
         <NavbarBrand href="/">
-          <img src={VBVFLogo} alt="VBVF Logo" />
+          <Image width={500} src={VBVFLogo} alt="VBVF Logo" />
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
@@ -90,8 +91,8 @@ const GlobalNav = (props) => {
                       <p className="contact-page-link">
                         Looking for our <strong>mailing address?</strong> Check
                         out our{" "}
-                        <Link onClick={dualToggle} to="/contact">
-                          Contact Page
+                        <Link onClick={dualToggle} href="/contact">
+                          <a>Contact Page</a>
                         </Link>
                       </p>
                     </div>

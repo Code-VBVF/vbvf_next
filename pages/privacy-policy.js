@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "../css/terms-privacy.css";
+import { Link } from "next/link";
+import "../src/css/terms-privacy.module.css";
 
 const PrivacyPolicy = () => {
   return (
@@ -113,8 +113,10 @@ const PrivacyPolicy = () => {
       <p>
         If If you have any questions about this Privacy Policy, the practices of
         this website, please contact us using the{" "}
-        <Link to="/contact">web form</Link> provided on our Contact page or
-        write us at:
+        <Link href="/contact">
+          <a>web form</a>
+        </Link>{" "}
+        provided on our Contact page or write us at:
       </p>
     </div>
   );

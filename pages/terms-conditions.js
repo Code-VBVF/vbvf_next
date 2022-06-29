@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/terms-privacy.css";
+import "../src/css/terms-privacy.module.css";
 
 const TermsConditions = () => {
   return (
