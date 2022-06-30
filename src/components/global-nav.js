@@ -17,7 +17,7 @@ import {
   ModalFooter,
 } from "reactstrap";
 import Link from "next/link";
-import "../css/global-nav.module.scss";
+import styles from "../css/global-nav.module.scss";
 import VBVFLogo from "../../public/images/logos/vbvf_logo.png";
 import { getMobileOperatingSystem } from "../util/index";
 import Button from "../components/button";
@@ -38,9 +38,15 @@ const GlobalNav = (props) => {
 
   return (
     <div>
-      <Navbar className="menu-bar" color="light" light expand="lg">
+      <Navbar className={styles.menuBar} color="light" light expand="xl">
         <NavbarBrand href="/">
-          <Image width={500} src={VBVFLogo} alt="VBVF Logo" />
+          <Image
+            alt="VBVF Logo"
+            src={VBVFLogo}
+            layout="intrinsic"
+            width={209}
+            height={44.16}
+          />
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>

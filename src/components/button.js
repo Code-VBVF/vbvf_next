@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/button.module.scss";
+import styles from "../css/button.module.scss";
 
 const Button = (props) => {
   const size = () => {
@@ -20,7 +20,7 @@ const Button = (props) => {
     >
       <button
         type={props.type ?? ""}
-        className={`button ${size()} ${props.color} `}
+        className={`${styles.button} ${styles[size()]} ${styles[props.color]}`}
         onClick={props.buttonFunc}
       >
         {props.title}

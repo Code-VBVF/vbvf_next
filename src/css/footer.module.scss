@@ -19,18 +19,14 @@
     }
   }
 
-  &-icons {
+  &Icons {
+    width: 10vw;
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    img {
-      margin: 10px;
-      height: 40px;
-      width: auto;
-    }
   }
-  &-disclosures {
+  &Disclosures {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -38,7 +34,7 @@
     text-align: center;
     color: black;
   }
-  &-copyright {
+  &Copyright {
     color: black;
     font-size: 0.75em;
   }
