@@ -1,7 +1,7 @@
 $darkNavy: #2e3c49;
 $green: #4f5957;
 $gold: #e8b021;
-.about-menu {
+.aboutMenu {
   margin: 5vh;
   border-bottom: 1px solid $darkNavy;
   a {
@@ -9,6 +9,7 @@ $gold: #e8b021;
     text-align: center;
     margin: 2vh;
     padding: 3px;
+    font-weight: bold;
   }
   a:hover {
     color: $green;

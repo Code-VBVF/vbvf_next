@@ -23,7 +23,7 @@ import { getMobileOperatingSystem } from "../util/index";
 import Button from "../components/button";
 import Image from "next/image";
 
-const GlobalNav = (props) => {
+export default function GlobalNav(props) {
   const [isOpen, setIsOpen] = useState(false);
   const [modal, setModal] = useState(false);
 
@@ -60,7 +60,7 @@ const GlobalNav = (props) => {
                   Service Times & Directions
                 </ModalHeader>
                 <ModalBody>
-                  <div className="service-time-modal">
+                  <div className={styles.serviceTimeModal}>
                     <div>
                       <h2>Weekend Services</h2>
 
@@ -124,7 +124,7 @@ const GlobalNav = (props) => {
               <DropdownMenu right>
                 <DropdownItem>
                   <NavLink
-                    className="sub-menu"
+                    className={styles.subMenu}
                     href="/ministries/childrens-ministry"
                   >
                     Children's Ministry
@@ -133,7 +133,7 @@ const GlobalNav = (props) => {
                 <DropdownItem>
                   <NavItem>
                     <NavLink
-                      className="sub-menu"
+                      className={styles.subMenu}
                       href="/ministries/youth-ministry"
                     >
                       Youth Ministry
@@ -141,18 +141,21 @@ const GlobalNav = (props) => {
                   </NavItem>
                 </DropdownItem>
                 <DropdownItem>
-                  <NavLink className="sub-menu" href="/ministries/small-groups">
+                  <NavLink
+                    className={styles.subMenu}
+                    href="/ministries/small-groups"
+                  >
                     Small Groups
                   </NavLink>
                 </DropdownItem>
                 <DropdownItem>
-                  <NavLink className="sub-menu" href="/ministries/serve">
+                  <NavLink className={styles.subMenu} href="/ministries/serve">
                     Serving at VBVF
                   </NavLink>
                 </DropdownItem>
                 <DropdownItem>
                   <NavLink
-                    className="sub-menu"
+                    className={styles.subMenu}
                     href="/ministries/care-ministry"
                   >
                     Care Ministry
@@ -178,6 +181,4 @@ const GlobalNav = (props) => {
       </Navbar>
     </div>
   );
-};
-
-export default GlobalNav;
+}

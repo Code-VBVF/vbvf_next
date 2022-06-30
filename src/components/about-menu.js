@@ -1,26 +1,36 @@
 import React from "react";
 import { Nav } from "reactstrap";
-import { NavLink } from "react-router-dom";
-import "../css/about-menu.scss";
+import Link from "next/link";
+import styles from "../css/aboutMenu.module.scss";
+import { useRouter } from "next/router";
 
-const AboutMenu = () => {
+export default function AboutMenu() {
+  const isActive = (pageName) => {
+    console.log(useRouter().pathname);
+    return useRouter().pathname.includes(pageName);
+  };
   return (
-    <div className="about-menu">
+    <div className={styles.aboutMenu}>
       <Nav>
-        <NavLink exact activeClassName="active" to="/about/faq">
-          FAQ
-        </NavLink>
-        <NavLink exact activeClassName="active" to="/about/leadership">
-          Leadership
-        </NavLink>
-        <NavLink exact activeClassName="active" to="/about/our-story">
-          Our Story
-        </NavLink>
-        <NavLink exact activeClassName="active" to="/about/beliefs">
-          Our Beliefs
-        </NavLink>
+        <Link href="/about/faq">
+          <a className={`${isActive("faq") ? styles["active"] : ""}`}>FAQ</a>
+        </Link>
+        <Link href="/about/leadership">
+          <a className={`${isActive("leadership") ? styles["active"] : ""}`}>
+            Leadership
+          </a>
+        </Link>
+        <Link href="/about/our-story">
+          <a className={`${isActive("story") ? styles["active"] : ""}`}>
+            Our Story
+          </a>
+        </Link>
+        <Link href="/about/beliefs">
+          <a className={`${isActive("beliefs") ? styles["active"] : ""}`}>
+            Our Beliefs
+          </a>
+        </Link>
       </Nav>
     </div>
   );
-};
-export default AboutMenu;
+}

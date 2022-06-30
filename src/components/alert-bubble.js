@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { sanity } from "../util/index";
 import { Link } from "next/link";
 import { useRouter } from "next/router";
-import "../css/alert-bubble.module.scss";
+import styles from "../css/alert-bubble.module.scss";
 
 export default function AlertBubble() {
   const [announcement, setAnnouncement] = useState();
@@ -33,10 +33,14 @@ export default function AlertBubble() {
 
   return (
     <div
-      className={`alert-bubble ${announcement != null ? "active" : "hidden"}`} //conditionally showing announcement
+      className={`${styles.alertBubble} ${
+        announcement != null ? "styles.active" : "styles.hidden"
+      }`} //conditionally showing announcement
     >
       {announcement?.alertBubbleText}{" "}
-      <Link to={`/[announcement?._id]`}>Read more</Link>
+      <Link href={`/:announcement?._id:`}>
+        <a>Read more</a>
+      </Link>
     </div>
   );
 }

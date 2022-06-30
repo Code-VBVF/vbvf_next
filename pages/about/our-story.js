@@ -1,5 +1,5 @@
 import React from "react";
-import AboutMenu from "./about-menu";
+import AboutMenu from "../../src/components/about-menu";
 import "../css/our-story.scss";
 
 export default function OurStory() {

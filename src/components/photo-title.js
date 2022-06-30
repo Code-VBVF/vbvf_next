@@ -1,13 +1,17 @@
 import React from "react";
-import "../css/photo-title.scss";
+import Image from "next/image";
+import styles from "../css/photo-title.module.scss";
 
 export default function PhotoTitle(props) {
+  console.log(props);
   return (
-    <div className="person">
-      <img
+    <div className={styles.person}>
+      <Image
         loading={props.role === "Elder" ? "eager" : "lazy"}
-        src={props.photo}
+        src={props.image}
         alt={props.name}
+        layout="fill"
+        width={300}
       />
       <p>
         {props.name}
