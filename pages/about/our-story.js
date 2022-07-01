@@ -1,12 +1,12 @@
 import React from "react";
 import AboutMenu from "../../src/components/about-menu";
-import "../css/our-story.scss";
+import styles from "../../src/css/our-story.module.scss";
 
 export default function OurStory() {
   return (
-    <div className="our-story">
+    <div className={styles.ourStory}>
       <AboutMenu />
-      <div className="our-story-text">
+      <div className={styles.ourStoryText}>
         <h1>Our Story</h1>
         <p>
           Verse By Verse Fellowship (VBVF) is the result of a church planting

@@ -4,9 +4,9 @@ import FrequentlyAskedQuestions from "../../src/components/frequently-asked-ques
 import { sanity } from "../../src/util/index";
 import styles from "../../src/css/faq.module.scss";
 import AboutMenu from "../../src/components/about-menu";
-import AlertBubble from "../../src/components/alert-bubble";
+// import AlertBubble from "../../src/components/alert-bubble";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const query = `*[_type == "page" && title == "About Page"]{...}`;
   const res = await sanity.fetch(query);
   const data = await res[0];

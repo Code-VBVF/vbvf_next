@@ -34,7 +34,7 @@ export default function AlertBubble() {
   return (
     <div
       className={`${styles.alertBubble} ${
-        announcement != null ? "styles.active" : "styles.hidden"
+        announcement != null ? styles["active"] : styles["hidden"]
       }`} //conditionally showing announcement
     >
       {announcement?.alertBubbleText}{" "}

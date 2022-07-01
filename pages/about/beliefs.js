@@ -1,25 +1,25 @@
 import React from "react";
-import "../css/beliefs.scss";
+import styles from "../../src/css/beliefs.module.scss";
 // import { Link } from "react-router-dom";
-import AboutMenu from "./about-menu";
+import AboutMenu from "../../src/components/about-menu";
 
 export default function Beliefs() {
   return (
-    <div className="beliefs-values">
+    <div className={styles.beliefsValues}>
       <AboutMenu />
-      <div className="beliefs-values-text">
+      <div className={styles.beliefsValuesText}>
         <h2>Core Values</h2>
         <h3>A reliance on scripture. </h3>
-        <span className="scripture">(2 Peter 1:3)</span>
+        <span className={styles.scripture}>(2 Peter 1:3)</span>
         <p>Life and godliness are found in a knowledge of His Word.</p>
         <h3>An appreciation of preaching. </h3>
-        <span className="scripture">(2 Timothy 4:1-2)</span>
+        <span className={styles.scripture}>(2 Timothy 4:1-2)</span>
         <p>Proclaiming God’s word is our first and greatest responsibility.</p>
         <h3>An attitude of serving. </h3>
-        <span className="scripture">(Ephesians 4:11-13)</span>
+        <span className={styles.scripture}>(Ephesians 4:11-13)</span>
         <p>Equipping Christ’s followers to serve Him is our purpose.</p>
         <h3>A lifestyle of witnessing. </h3>
-        <span className="scripture">(Matthew 5:16)</span>
+        <span className={styles.scripture}>(Matthew 5:16)</span>
         <p>
           Preaching the Gospel of Jesus Christ by word and deed is our
           privilege.

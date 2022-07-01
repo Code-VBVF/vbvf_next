@@ -6,7 +6,6 @@ import { useRouter } from "next/router";
 
 export default function AboutMenu() {
   const isActive = (pageName) => {
-    console.log(useRouter().pathname);
     return useRouter().pathname.includes(pageName);
   };
   return (

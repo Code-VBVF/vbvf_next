@@ -1,9 +1,9 @@
 import React from "react";
-import "../src/css/terms-privacy.module.css";
+import styles from "../src/css/terms-privacy.module.css";
 
 const TermsConditions = () => {
   return (
-    <div className="disclosures">
+    <div className={styles.disclosures}>
       <h1>Terms and Conditions</h1>
       <h2>Introduction</h2>
       <p>

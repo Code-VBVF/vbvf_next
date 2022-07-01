@@ -29,5 +29,9 @@ export default function FrequentlyAskedQuestions(props) {
     </div>
   ));
 
-  return <div className={`${styles.faqList} ${props.layout}`}>{faqList}</div>;
+  return (
+    <div className={`${styles.faqList} ${styles.faqList[props.layout]}`}>
+      {faqList}
+    </div>
+  );
 }
