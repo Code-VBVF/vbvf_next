@@ -1,10 +1,11 @@
 import React from "react";
-import Attendee from "../images/connect/attending_meeting.jpg";
-import iPhones from "../images/connect/Iphones.png";
-import ConnectionStep from "../components/connection-steps";
-import "../css/connect-page.scss";
-import Button from "../components/button";
-import { getMobileOperatingSystem } from "../util";
+import Attendee from "../public/images/connect/attending_meeting.jpg";
+import iPhones from "../public/images/connect/Iphones.png";
+import ConnectionStep from "../src/components/connection-steps";
+import styles from "../src/css/connect.module.scss";
+import Button from "../src/components/button";
+import { getMobileOperatingSystem } from "../src/util";
+import Image from "next/image";
 
 const ConnectPage = () => {
   const appStoreLink = () => {
@@ -17,11 +18,11 @@ const ConnectPage = () => {
     }
   };
   return (
-    <div className="connect-container">
-      <div id="connect-header"></div>
+    <div className={styles.connectContainer}>
+      <div id={styles.connectHeader}></div>
       <h1>Connect Here.</h1>
-      <div className="first-row">
-        <div className="connection-meeting">
+      <div className={styles.firstRow}>
+        <div className={styles.connectionMeeting}>
           <h2>Connection Meeting</h2>
           <p>
             We love seeing so many new faces at VBVF and would love to meet you!
@@ -39,10 +40,18 @@ const ConnectPage = () => {
             buttonText="Connection Card"
           />
         </div>
-        <img src={Attendee} alt="vbvf member in connection meeting" />
+        <div className={styles.connectionImage}>
+          <Image
+            layout="intrinsic"
+            width={425}
+            height={319}
+            src={Attendee}
+            alt="vbvf member in connection meeting"
+          />
+        </div>
       </div>
-      <div className="church-center-row">
-        <div className="church-center-row-title-button">
+      <div className={styles.churchCenterRow}>
+        <div className={styles.churchCenterRowTitleButton}>
           <h3>Start connecting now</h3>
           <p>
             Check out the church center app to find out what's going on at VBVF.
@@ -55,7 +64,13 @@ const ConnectPage = () => {
             link={appStoreLink()}
           />
         </div>
-        <img src={iPhones} alt="" />
+        <Image
+          layout="intrinsic"
+          width={550}
+          height={477}
+          src={iPhones}
+          alt=""
+        />
       </div>
     </div>
   );

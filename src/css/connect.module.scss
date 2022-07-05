@@ -1,10 +1,10 @@
 $vbvf-blue: #122149;
-.connect-container {
+.connectContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  #connect-header {
+  #connectHeader {
     width: 100%;
     padding: 30vh;
     display: flex;
@@ -14,7 +14,7 @@ $vbvf-blue: #122149;
         rgba(0, 0, 0, 0),
         rgba(255, 255, 255, 1)
       ),
-      url(../images/connect/banner.jpg);
+      url(../../public/images/connect/banner.jpg);
     background-size: cover;
   }
   h1 {
@@ -23,27 +23,26 @@ $vbvf-blue: #122149;
     text-align: center;
     margin-bottom: 10vh;
   }
-  .first-row {
-    width: 90%;
+  .firstRow {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     margin: 10vh 0 5vh 0;
-    .connection-meeting {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      p {
-        width: 90%;
-        font-size: 1.2em;
-      }
-    }
-    img {
-      max-width: 40%;
+    div {
+      width: 40%;
     }
   }
-  .church-center-row {
+
+  .connectionMeeting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+      font-size: 1.2em;
+    }
+  }
+  .churchCenterRow {
     width: 80%;
     display: flex;
     flex-direction: row;
@@ -58,10 +57,10 @@ $vbvf-blue: #122149;
   }
 }
 @media screen and (max-width: 800px) {
-  .connect-container {
+  .connectContainer {
     flex-direction: column;
 
-    #connect-header {
+    #connectHeader {
       padding: 10vh;
       margin-bottom: 5vh;
       background-size: cover;
@@ -70,29 +69,31 @@ $vbvf-blue: #122149;
     h1 {
       font-size: 3em;
     }
-    .first-row {
+    .firstRow {
       flex-direction: column-reverse;
       margin: 0 0 3vh 0;
-      p {
-        max-width: 90%;
-        font-size: 1em;
-      }
-      img {
-        display: none;
-      }
-      h2 {
-        display: none;
-      }
-    }
-    .church-center-row {
-      width: 80%;
-      display: flex;
-      flex-direction: column-reverse;
-      margin: 5vh;
-      align-items: center;
       div {
         width: 95%;
       }
+      p {
+        font-size: 1em;
+      }
+    }
+    h2 {
+      display: none;
+    }
+  }
+  .connectionImage {
+    display: none;
+  }
+  .churchCenterRow {
+    width: 80%;
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 5vh;
+    align-items: center;
+    div {
+      width: 95%;
     }
   }
 }

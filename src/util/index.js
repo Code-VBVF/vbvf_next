@@ -22,7 +22,10 @@ export function sanityUrlFor(source) {
  * @returns {String}
  */
 export function getMobileOperatingSystem() {
-  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  var userAgent =
+    typeof window !== "undefined"
+      ? navigator.userAgent || navigator.vendor || window.opera
+      : null;
 
   // Windows Phone must come first because its UA also contains "Android"
   if (/windows phone/i.test(userAgent)) {
