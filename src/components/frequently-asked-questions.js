@@ -30,8 +30,6 @@ export default function FrequentlyAskedQuestions(props) {
   ));
 
   return (
-    <div className={`${styles.faqList} ${styles.faqList[props.layout]}`}>
-      {faqList}
-    </div>
+    <div className={`${styles.faqList} ${styles[props.layout]}`}>{faqList}</div>
   );
 }
