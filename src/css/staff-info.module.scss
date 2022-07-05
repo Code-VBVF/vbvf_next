@@ -1,14 +1,14 @@
 $gold: #e8b021;
-.staff-info-container {
+.staffInfoContainer {
   max-width: 90%;
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
-  .staff-card {
+  .staffCard {
     max-width: 30%;
   }
-  .staff-info {
+  .staffInfo {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,14 +26,14 @@ $gold: #e8b021;
   }
 }
 @media screen and (max-width: 800px) {
-  .staff-info-container {
+  .staffInfoContainer {
     margin: 3vh;
     flex-direction: column;
     align-items: center;
-    .staff-card {
+    .staffCard {
       min-width: 100%;
     }
-    .staff-info {
+    .staffInfo {
       margin-top: 20px;
       min-width: 100%;
     }

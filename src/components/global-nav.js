@@ -125,39 +125,30 @@ export default function GlobalNav(props) {
                 <DropdownItem>
                   <NavLink
                     className={styles.subMenu}
-                    href="/ministries/childrens-ministry"
+                    href="/childrens-ministry"
                   >
                     Children's Ministry
                   </NavLink>
                 </DropdownItem>
                 <DropdownItem>
                   <NavItem>
-                    <NavLink
-                      className={styles.subMenu}
-                      href="/ministries/youth-ministry"
-                    >
+                    <NavLink className={styles.subMenu} href="/youth-ministry">
                       Youth Ministry
                     </NavLink>
                   </NavItem>
                 </DropdownItem>
                 <DropdownItem>
-                  <NavLink
-                    className={styles.subMenu}
-                    href="/ministries/small-groups"
-                  >
+                  <NavLink className={styles.subMenu} href="/small-groups">
                     Small Groups
                   </NavLink>
                 </DropdownItem>
                 <DropdownItem>
-                  <NavLink className={styles.subMenu} href="/ministries/serve">
+                  <NavLink className={styles.subMenu} href="/serve">
                     Serving at VBVF
                   </NavLink>
                 </DropdownItem>
                 <DropdownItem>
-                  <NavLink
-                    className={styles.subMenu}
-                    href="/ministries/care-ministry"
-                  >
+                  <NavLink className={styles.subMenu} href="/care-ministry">
                     Care Ministry
                   </NavLink>
                 </DropdownItem>

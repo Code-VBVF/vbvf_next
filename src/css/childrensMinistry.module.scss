@@ -4,30 +4,25 @@ $sand: #dbcca5;
 $darkNavy: #2e3c49;
 $green: #4f5957;
 
-.childrens-ministry {
+.childrensMinistry {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(../../images/childrens_ministry/Intersect.svg);
+  background-image: url(../../public/images/childrens_ministry/Intersect.svg);
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
 
-  &-header {
+  &HeroContent {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    &-logo {
-      width: 40%;
-      height: auto;
-      padding: 20px;
-      margin: 3vh;
-    }
+    padding: 20px;
+    margin: 3vh;
   }
 
-  &-mission {
+  &Mission {
     width: 90%;
     display: flex;
     flex-direction: row;
@@ -36,13 +31,13 @@ $green: #4f5957;
     padding: 5vh;
     margin: 3vh 0 10vh 0;
 
-    &-paragraph {
+    &Paragraph {
       margin: 0 5vh 0 0;
       width: 60%;
     }
   }
 
-  &-safety {
+  &Safety {
     width: 70%;
     background: $sand;
     display: flex;
@@ -58,12 +53,12 @@ $green: #4f5957;
       margin: 20px;
     }
   }
-  &-check-in {
+  &CheckIn {
     width: 70%;
     margin: 20px;
   }
 
-  &-materials {
+  &Materials {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -75,7 +70,7 @@ $green: #4f5957;
       color: $gold;
     }
 
-    .button-container {
+    .buttonContainer {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -89,7 +84,7 @@ $green: #4f5957;
       border-radius: 10px;
     }
   }
-  &-sign-up {
+  &SignUp {
     width: 70%;
     display: flex;
     flex-direction: column;
@@ -103,15 +98,15 @@ $green: #4f5957;
   }
 }
 @media screen and (max-width: 800px) {
-  .childrens-ministry {
+  .childrensMinistry {
     background-size: cover;
-    &-header {
-      &-logo {
+    &Header {
+      &Logo {
         width: 80%;
       }
     }
 
-    &-mission {
+    &Mission {
       width: 100%;
       flex-direction: column;
       p {
@@ -119,7 +114,7 @@ $green: #4f5957;
         margin: 0 0 5vh 0;
       }
     }
-    &-safety {
+    &Safety {
       flex-direction: column;
       align-items: center;
       img {
@@ -129,11 +124,11 @@ $green: #4f5957;
         width: 95%;
       }
     }
-    &-check-in {
+    &CheckIn {
       width: 90%;
       margin: 5vh 5vh 10vh 5vh;
     }
-    &-materials {
+    &Materials {
       width: 100%;
       flex-direction: column;
       padding: 0;
@@ -147,12 +142,12 @@ $green: #4f5957;
       p {
         width: 90%;
       }
-      .button-container {
+      .buttonContainer {
         align-items: center;
         margin: 0 0 3vh 0;
       }
     }
-    &-sign-up {
+    &SignUp {
       width: 100%;
       flex-direction: column;
       margin: 0 0 10vh 0;

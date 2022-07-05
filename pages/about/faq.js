@@ -14,7 +14,6 @@ export async function getStaticProps() {
 }
 export default function faq({ data }) {
   const [pageData, setPageData] = useState(data);
-  const [faqIsLoading, setFaqIsLoading] = useState(true);
 
   return (
     <div className={styles.faq}>

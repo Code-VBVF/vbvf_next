@@ -4,7 +4,7 @@ $gold: #e8b021;
 $bone: #eae9e8;
 $red: #cc2e23;
 
-.care-ministries {
+.careMinistries {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,7 +15,7 @@ $red: #cc2e23;
   iframe {
     margin: 3vh;
   }
-  &-row {
+  &Row {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -30,12 +30,12 @@ $red: #cc2e23;
       min-width: 40%;
     }
 
-    &-vision {
+    &Vision {
       width: 40%;
     }
   }
 }
-.contact-container {
+.contactContainer {
   width: 100%;
   margin: 5vh;
   padding: 2vh;
@@ -49,7 +49,7 @@ $red: #cc2e23;
     width: 60%;
   }
 }
-.close-button {
+.closeButton {
   align-self: flex-end;
   background-color: transparent;
   outline: none;
@@ -59,11 +59,11 @@ $red: #cc2e23;
 }
 
 @media screen and (max-width: 700px) {
-  .care-ministries {
+  .careMinistries {
     iframe {
       width: 100%;
     }
-    &-row {
+    &Row {
       flex-direction: column;
       width: 90%;
       align-items: center;
@@ -71,12 +71,12 @@ $red: #cc2e23;
       span {
         width: 98%;
       }
-      &-vision {
+      &Vision {
         flex-direction: column-reverse;
         width: 100%;
       }
     }
-    .contact-container {
+    .contactContainer {
       flex-direction: column;
       h3 {
         width: 98%;

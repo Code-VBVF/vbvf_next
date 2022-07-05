@@ -1,11 +1,11 @@
-.care-ministry-form {
+.careMinistryMorm {
   max-width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 12px;
 
-  .text-field {
+  .textField {
     width: 100%;
 
     border-radius: 7px;
@@ -21,13 +21,13 @@
     }
   }
 
-  .button-container {
+  .buttonContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     margin: 20px 0 0 0;
   }
-  .checkbox-group {
+  .checkboxGroup {
     width: 100%;
     display: flex;
     flex-direction: row;

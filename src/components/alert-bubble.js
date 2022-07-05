@@ -4,13 +4,9 @@ import { Link } from "next/link";
 import { useRouter } from "next/router";
 import styles from "../css/alert-bubble.module.scss";
 
-export default function AlertBubble() {
-  const [announcement, setAnnouncement] = useState();
-  let page = useRouter();
-  const params = { currentPage: page.pathname };
-
+export async function getStaticProps() {
   //the query beneath pulls in announcements that are not expired which also contain the current page in the whereToDisplay array
-  const announcementQuery = `*[_type == "specialAnnouncement" && expirationDate > $now && $currentPage in whereToDisplay ] {
+  const query = `*[_type == "specialAnnouncement" && expirationDate > $now && $currentPage in whereToDisplay ] {
         title,
         body,
         expirationDate,
@@ -18,18 +14,14 @@ export default function AlertBubble() {
         whereToDisplay,
         _id
     }`;
-
-  useEffect(() => {
-    sanity
-      .fetch(announcementQuery, params)
-      .then((result) => {
-        setAnnouncement(result[0]);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    //eslint-disable-next-line
-  }, []);
+  const res = await sanity.fetch(query);
+  const data = await res[0];
+  return { props: { data } };
+}
+export default function AlertBubble({ data }) {
+  const [announcement, setAnnouncement] = useState(data ?? null);
+  let page = useRouter();
+  const params = { currentPage: page.pathname };
 
   return (
     <div
@@ -38,7 +30,7 @@ export default function AlertBubble() {
       }`} //conditionally showing announcement
     >
       {announcement?.alertBubbleText}{" "}
-      <Link href={`/:announcement?._id:`}>
+      <Link href={`/:announcement._id:`}>
         <a>Read more</a>
       </Link>
     </div>
