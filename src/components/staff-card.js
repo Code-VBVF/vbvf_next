@@ -9,7 +9,7 @@ import {
   Button,
 } from "reactstrap";
 
-const StaffCard = (props) => {
+export default function StaffCard(props) {
   return (
     <div>
       <Card body className="text-center">
@@ -25,6 +25,4 @@ const StaffCard = (props) => {
       </Card>
     </div>
   );
-};
-
-export default StaffCard;
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import PortableText from "@sanity/block-content-to-react";
-import "../css/frequently-asked-questions.scss";
+import styles from "../css/frequentlyAskedQuestions.module.scss";
+import Link from "next/link";
 
 export default function FrequentlyAskedQuestions(props) {
   const serializers = {
@@ -8,13 +9,17 @@ export default function FrequentlyAskedQuestions(props) {
     marks: {
       link: ({ mark, children }) => {
         const { href } = mark;
-        return <a href={href}>{children}</a>;
+        return (
+          <Link href={href}>
+            <a>{children}</a>
+          </Link>
+        );
       },
     },
   };
 
   const faqList = props.faq?.map((question) => (
-    <div className="faq-list-item">
+    <div className={styles.faqListItem}>
       <h3>{question.question}</h3>
 
       {/* making use of sanity's component for reading in portable text */}
@@ -24,5 +29,7 @@ export default function FrequentlyAskedQuestions(props) {
     </div>
   ));
 
-  return <div className={`faq-list ${props.layout}`}>{faqList}</div>;
+  return (
+    <div className={`${styles.faqList} ${styles[props.layout]}`}>{faqList}</div>
+  );
 }

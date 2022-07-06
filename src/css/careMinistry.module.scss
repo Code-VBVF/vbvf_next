@@ -1,0 +1,86 @@
+$darkNavy: #2e3c49;
+$green: #4f5957;
+$gold: #e8b021;
+$bone: #eae9e8;
+$red: #cc2e23;
+
+.careMinistries {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    margin: 5vh 0 2vh 0;
+  }
+  iframe {
+    margin: 3vh;
+  }
+  &Row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 3vh;
+    max-width: 1200px;
+    span {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      min-width: 40%;
+    }
+
+    &Vision {
+      width: 40%;
+    }
+  }
+}
+.contactContainer {
+  width: 100%;
+  margin: 5vh;
+  padding: 2vh;
+  display: flex;
+  flex-direction: row;
+  outline: none;
+  justify-content: center;
+  align-items: center;
+  h3 {
+    padding: 3vh;
+    width: 60%;
+  }
+}
+.closeButton {
+  align-self: flex-end;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 700px) {
+  .careMinistries {
+    iframe {
+      width: 100%;
+    }
+    &Row {
+      flex-direction: column;
+      width: 90%;
+      align-items: center;
+      margin: 0;
+      span {
+        width: 98%;
+      }
+      &Vision {
+        flex-direction: column-reverse;
+        width: 100%;
+      }
+    }
+    .contactContainer {
+      flex-direction: column;
+      h3 {
+        width: 98%;
+      }
+    }
+  }
+}

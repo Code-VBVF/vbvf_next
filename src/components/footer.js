@@ -1,37 +1,53 @@
 import React from "react";
-import FacebookLogo from "../images/logos/facebook_logo.png";
-import InstagramLogo from "../images/logos/instagram_logo.png";
-import "../css/footer.scss";
+import FacebookLogo from "../../public/images/logos/facebook_logo.png";
+import InstagramLogo from "../../public/images/logos/instagram_logo.png";
+import styles from "../css/footer.module.scss";
 
-import { Link, useLocation } from "react-router-dom";
+import { useRouter } from "next/router";
+import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <div className={styles.footer}>
       <p>Follow VBVF Online</p>
-      <div className="footer-icons">
+      <div className={styles.footerIcons}>
         <a href="https://www.facebook.com/vbvfellowship/">
-          <img src={FacebookLogo} alt="Facebook Logo" />
+          <Image
+            height={50}
+            width={50}
+            src={FacebookLogo}
+            alt="Facebook Logo"
+          />
         </a>
         <a href="https://www.instagram.com/versebyversefellowship/">
-          <img src={InstagramLogo} alt="Instagram Logo" />
+          <Image
+            height={50}
+            width={50}
+            src={InstagramLogo}
+            alt="Instagram Logo"
+          />
         </a>
       </div>
-      <ul className="footer-disclosures">
+      <ul className={styles.footerDisclosures}>
         <li>
-          <Link to="/privacy-policy">Privacy Policy</Link>
+          <Link href="/privacy-policy">
+            <a>Privacy Policy</a>
+          </Link>
         </li>
         <li>
-          <Link to="/terms-and-conditions">Terms and Conditions</Link>
+          <Link href="/terms-and-conditions">
+            <a>Terms and Conditions</a>
+          </Link>
         </li>
       </ul>
-      <p className="footer-copyright">
+      <p className={styles.footerCopyright}>
         &#169; {new Date().getFullYear()} Verse By Verse Fellowship
       </p>
-      {useLocation().pathname === "/" && (
-        <a id="sanity-link" href="https://www.sanity.io">
-          Structured content powered by Sanity.io
-        </a>
+      {useRouter().pathname === "/" && (
+        <Link href="https://www.sanity.io">
+          <a id="sanity-link">Structured content powered by Sanity.io</a>
+        </Link>
       )}
     </div>
   );

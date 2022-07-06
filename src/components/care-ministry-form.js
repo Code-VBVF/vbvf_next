@@ -1,6 +1,6 @@
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import React, { useState } from "react";
-import "../css/care-ministry-form.scss";
+import styles from "../css/careMinistryForm.module.scss";
 import * as Yup from "yup";
 import { motion } from "framer-motion";
 import Button from "./button";
@@ -32,12 +32,12 @@ export default function CareMinistryForm({ closeFunc }) {
     <div>
       {/* renders confirmation component when form is submitted */}
       {isFormSubmitted ? (
-        <div className="contact-submitted">
-          <div className="contact-submitted-check-container">
+        <div className={styles.contactSubmitted}>
+          <div className={styles.contactSubmittedCheckContainer}>
             <motion.svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
-              className="contact-submitted-check-container-item"
+              className={styles.contactSubmittedCheckContainerItem}
             >
               <motion.path
                 d="M0 11l2-2 5 5L18 3l2 2L7 18z"
@@ -109,7 +109,7 @@ export default function CareMinistryForm({ closeFunc }) {
           }}
         >
           {({ values }) => (
-            <Form className="care-ministry-form" method="POST">
+            <Form className={styles.careMinistryForm} method="POST">
               <Field
                 type="hidden"
                 name="form-name"
@@ -119,30 +119,30 @@ export default function CareMinistryForm({ closeFunc }) {
               <h2>Contact Care Ministries</h2>
 
               <label name="fullName">Full Name</label>
-              <Field className="text-field" name="fullName" autoFocus />
+              <Field className={styles.textField} name="fullName" autoFocus />
               <ErrorMessage
                 component="div"
-                className="contact-error-message"
+                className={styles.contactErrorMessage}
                 name="fullName"
               />
               <label name="email">Email Address</label>
-              <Field className="text-field" name="email" type="email" />
+              <Field className={styles.textField} name="email" type="email" />
               <ErrorMessage
                 component="div"
-                className="contact-error-message"
+                className={styles.contactErrorMessage}
                 name="email"
               />
               <label name="phoneNumber">Phone Number</label>
               <Field className="text-field" name="phoneNumber" type="tel" />
               <ErrorMessage
                 component="div"
-                className="contact-error-message"
+                className={styles.contactErrorMessage}
                 name="phoneNumber"
               />
               <label name="contactOptions">Preferred method of contact</label>
               <span
                 role="group"
-                className="checkbox-group"
+                className={styles.checkboxGroup}
                 name="contactOptions"
               >
                 <label>
@@ -156,10 +156,10 @@ export default function CareMinistryForm({ closeFunc }) {
               </span>
               <ErrorMessage
                 component="div"
-                className="contact-error-message"
+                className={styles.contactErrorMessage}
                 name="contactOptions"
               />
-              <span className="previous-counseling">
+              <span className={styles.previousCounseling}>
                 Are you currently receiving or have you previously received
                 counseling from VBVF?
                 <label>
@@ -172,14 +172,14 @@ export default function CareMinistryForm({ closeFunc }) {
                     <label>
                       If yes, with whom?
                       <Field
-                        className="text-field"
+                        className={styles.textField}
                         name="counselor"
                         placeholder="Enter their name"
                       />
                     </label>
                     <label>
                       May we have your permission to contact that person?
-                      <span role="group" className="checkbox-group">
+                      <span role="group" className={styles.checkboxGroup}>
                         <label>
                           <Field
                             type="checkbox"

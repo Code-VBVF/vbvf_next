@@ -16,13 +16,14 @@ import {
   ModalBody,
   ModalFooter,
 } from "reactstrap";
-import { Link } from "react-router-dom";
-import "../css/global-nav.scss";
-import VBVFLogo from "../images/logos/vbvf_logo.png";
+import Link from "next/link";
+import styles from "../css/global-nav.module.scss";
+import VBVFLogo from "../../public/images/logos/vbvf_logo.png";
 import { getMobileOperatingSystem } from "../util/index";
 import Button from "../components/button";
+import Image from "next/image";
 
-const GlobalNav = (props) => {
+export default function GlobalNav(props) {
   const [isOpen, setIsOpen] = useState(false);
   const [modal, setModal] = useState(false);
 
@@ -37,9 +38,15 @@ const GlobalNav = (props) => {
 
   return (
     <div>
-      <Navbar className="menu-bar" color="light" light expand="lg">
+      <Navbar className={styles.menuBar} color="light" light expand="xl">
         <NavbarBrand href="/">
-          <img src={VBVFLogo} alt="VBVF Logo" />
+          <Image
+            alt="VBVF Logo"
+            src={VBVFLogo}
+            layout="intrinsic"
+            width={209}
+            height={44.16}
+          />
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
@@ -53,7 +60,7 @@ const GlobalNav = (props) => {
                   Service Times & Directions
                 </ModalHeader>
                 <ModalBody>
-                  <div className="service-time-modal">
+                  <div className={styles.serviceTimeModal}>
                     <div>
                       <h2>Weekend Services</h2>
 
@@ -90,8 +97,8 @@ const GlobalNav = (props) => {
                       <p className="contact-page-link">
                         Looking for our <strong>mailing address?</strong> Check
                         out our{" "}
-                        <Link onClick={dualToggle} to="/contact">
-                          Contact Page
+                        <Link onClick={dualToggle} href="/contact">
+                          <a>Contact Page</a>
                         </Link>
                       </p>
                     </div>
@@ -117,37 +124,31 @@ const GlobalNav = (props) => {
               <DropdownMenu right>
                 <DropdownItem>
                   <NavLink
-                    className="sub-menu"
-                    href="/ministries/childrens-ministry"
+                    className={styles.subMenu}
+                    href="/childrens-ministry"
                   >
                     Children's Ministry
                   </NavLink>
                 </DropdownItem>
                 <DropdownItem>
                   <NavItem>
-                    <NavLink
-                      className="sub-menu"
-                      href="/ministries/youth-ministry"
-                    >
+                    <NavLink className={styles.subMenu} href="/youth-ministry">
                       Youth Ministry
                     </NavLink>
                   </NavItem>
                 </DropdownItem>
                 <DropdownItem>
-                  <NavLink className="sub-menu" href="/ministries/small-groups">
+                  <NavLink className={styles.subMenu} href="/small-groups">
                     Small Groups
                   </NavLink>
                 </DropdownItem>
                 <DropdownItem>
-                  <NavLink className="sub-menu" href="/ministries/serve">
+                  <NavLink className={styles.subMenu} href="/serve">
                     Serving at VBVF
                   </NavLink>
                 </DropdownItem>
                 <DropdownItem>
-                  <NavLink
-                    className="sub-menu"
-                    href="/ministries/care-ministry"
-                  >
+                  <NavLink className={styles.subMenu} href="/care-ministry">
                     Care Ministry
                   </NavLink>
                 </DropdownItem>
@@ -171,6 +172,4 @@ const GlobalNav = (props) => {
       </Navbar>
     </div>
   );
-};
-
-export default GlobalNav;
+}
