@@ -49,6 +49,7 @@
     ]
   },
   "devDependencies": {
+    "eslint": "^8.19.0",
     "eslint-plugin-react-hooks": "^2.1.2"
   },
   "resolutions": {
