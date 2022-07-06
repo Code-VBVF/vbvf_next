@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "next/link";
-import "../src/css/terms-privacy.module.css";
+import styles from "../src/css/terms-privacy.module.css";
 
-const PrivacyPolicy = () => {
+export default function PrivacyPolicy() {
   return (
-    <div className="disclosures">
+    <div className={styles.disclosures}>
       <h1>Privacy Policy</h1>
       <p>
         Verse By Verse Fellowship (VBVF) has created this Privacy Policy to
@@ -120,6 +120,4 @@ const PrivacyPolicy = () => {
       </p>
     </div>
   );
-};
-
-export default PrivacyPolicy;
+}

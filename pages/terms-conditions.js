@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../src/css/terms-privacy.module.css";
 
-const TermsConditions = () => {
+export default function TermsConditions() {
   return (
     <div className={styles.disclosures}>
       <h1>Terms and Conditions</h1>
@@ -186,6 +186,4 @@ const TermsConditions = () => {
       </p>
     </div>
   );
-};
-
-export default TermsConditions;
+}

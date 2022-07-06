@@ -37,7 +37,7 @@ const liveStreamButtonText = () => {
   }
 };
 
-const Home = () => {
+export default function Home() {
   // const query = `{'pageData': *[_type == "page" && title == "Home"]{
   //   paragraphs,
   //   scripture,
@@ -192,6 +192,4 @@ const Home = () => {
       </div> */}
     </div>
   );
-};
-
-export default Home;
+}
