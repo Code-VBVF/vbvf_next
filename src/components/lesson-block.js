@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../css/lesson-block.scss";
+import styles from "../css/lessonBlock.module.scss";
 import { Modal, ModalHeader, ModalBody } from "reactstrap";
 import Button from "./button";
 
@@ -8,27 +8,31 @@ export default function LessonBlock(props) {
 
   const modalToggle = () => setModal(!modal);
   return (
-    <div className="lesson-block">
-      <span className="lesson-block-title">
-        <h4 className="lesson-block-title-lesson">{`Lesson ${props.lessonNumber}`}</h4>
+    <div className={styles.lessonBlock}>
+      <span className={styles.lessonBlockTitle}>
+        <h4
+          className={styles.lessonBlockTitleLesson}
+        >{`Lesson ${props.lessonNumber}`}</h4>
         {/* only render verses covered if props contains it */}
         {props.versesCovered && (
-          <h5 className="lesson-block-title-verses">{props.versesCovered}</h5>
+          <h5 className={styles.lessonBlockTitleVerses}>
+            {props.versesCovered}
+          </h5>
         )}
       </span>
       <Modal isOpen={modal} toggle={modalToggle} size="lg">
         <ModalHeader toggle={modalToggle}>{}</ModalHeader>
         <ModalBody>
-          <div className="lesson-modal">
+          <div className={styles.lessonModal}>
             <h3>{props?.versesCovered}</h3>
-            <div className="lesson-modal-video">
+            <div className={styles.lessonModalVideo}>
               <iframe
                 allowFullScreen
                 title={props.versesCovered}
                 src={`https://player.vimeo.com/video/${props.videoId}?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=175387`}
               ></iframe>
             </div>
-            <div className="lesson-modal-button">
+            <div className={styles.lessonModalButton}>
               <Button
                 title="Download notes"
                 buttonFunc={() => window.open(props.notesUrl)}
@@ -37,10 +41,10 @@ export default function LessonBlock(props) {
           </div>
         </ModalBody>
       </Modal>
-      <div className="lesson-block-icons">
+      <div className={styles.lessonBlockIcons}>
         {/* render video */}
         {props.videoId && (
-          <span className="lesson-block-icons-image" onClick={modalToggle}>
+          <span className={styles.lessonBlockIconsImage} onClick={modalToggle}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -59,7 +63,7 @@ export default function LessonBlock(props) {
         {/* render audio */}
         {props.audioLink && (
           <span
-            className="lesson-block-icons-image"
+            className={styles.lessonBlockIconsImage}
             onClick={() => {
               window.open(props.audioLink.split("?")[0]);
             }}
@@ -79,7 +83,7 @@ export default function LessonBlock(props) {
         {/* render notes */}
         {props.notesUrl && (
           <span
-            className="lesson-block-icons-image"
+            className={styles.lessonBlockIconsImage}
             role="button"
             onClick={() => window.open(props.notesUrl)}
             target="_blank"
@@ -102,7 +106,7 @@ export default function LessonBlock(props) {
         )}
         {props.questionsUrl && (
           <span
-            className="lesson-block-icons-image"
+            className={styles.lessonBlockIconsImage}
             role="button"
             onClick={() => window.open(props.questionsUrl)}
             target="_blank"

@@ -2,6 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/youth-ministry": "pages/youth-ministry.js",
-  "/childrens-ministry": "pages/childrens-ministry.js"
+  "/bible-studies/[studyName]": "pages/bible-studies/[studyName].js"
 }

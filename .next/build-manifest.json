@@ -25,20 +25,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/about/our-story": [
+    "/bible-studies": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/about/our-story.js"
+      "static/chunks/pages/bible-studies.js"
     ],
-    "/childrens-ministry": [
+    "/bible-studies/[studyName]": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/childrens-ministry.js"
-    ],
-    "/youth-ministry": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/youth-ministry.js"
+      "static/chunks/pages/bible-studies/[studyName].js"
     ]
   },
   "ampFirstPages": []

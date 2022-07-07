@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { sanity } from "../util/index";
-import { Link } from "next/link";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "../css/alert-bubble.module.scss";
 
