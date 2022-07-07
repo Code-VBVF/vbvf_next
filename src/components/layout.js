@@ -2,7 +2,7 @@ import React from "react";
 import GlobalNav from "./global-nav";
 import Footer from "./footer";
 
-const Layout = ({ children }) => {
+export default function Layout({ children }) {
   return (
     <>
       <GlobalNav />
@@ -10,6 +10,4 @@ const Layout = ({ children }) => {
       <Footer />
     </>
   );
-};
-
-export default Layout;
+}

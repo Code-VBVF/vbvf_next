@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import styles from "../css/button.module.scss";
 
@@ -13,7 +14,7 @@ const Button = (props) => {
   };
 
   return (
-    <a
+    <Link
       target={props.link?.includes("churchcenter") ? "_blank" : null} //forcing a new tab to open if link is to church center
       rel="noreferrer"
       href={props.link ?? "#0"}
@@ -25,7 +26,7 @@ const Button = (props) => {
       >
         {props.title}
       </button>
-    </a>
+    </Link>
   );
 };
 export default Button;
