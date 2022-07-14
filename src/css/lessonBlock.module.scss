@@ -1,4 +1,4 @@
-.lesson-block {
+.lessonBlock {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -7,26 +7,26 @@
   padding: 1vh;
   background: rgba(236, 236, 236, 1);
 
-  &-title {
+  &Title {
     text-align: left;
     margin-left: 2vh;
-    &-lesson {
+    &Lesson {
       font-size: 1.4em;
     }
 
-    &-verses {
+    &Verses {
       font-size: 1em;
       opacity: 0.7;
     }
   }
 
-  &-icons {
+  &Icons {
     width: 65%;
     display: grid;
     grid-template-rows: repeat(1, auto);
     grid-template-columns: repeat(4, 6vw);
 
-    &-image {
+    &Image {
       min-height: 40px;
       min-width: 40px;
       display: flex;
@@ -43,15 +43,15 @@
   }
 }
 
-.lesson-block:nth-child(even) {
+.lessonBlock:nth-child(even) {
   background: rgba(245, 245, 241, 1);
 }
 
-.lesson-modal {
+.lessonModal {
   display: flex;
   flex-direction: column;
 
-  &-video {
+  &Video {
     overflow: hidden;
     padding-bottom: 56.25%;
     position: relative;
@@ -65,10 +65,10 @@
       width: 100%;
     }
   }
-  &-button {
+  &Button {
     align-self: center;
     margin: 2vh auto 0 auto;
-    .doc-icon {
+    .docIcon {
       fill: white;
       height: 3vh;
       margin: 1vh;
@@ -76,10 +76,10 @@
   }
 }
 @media screen and (max-width: 600px) {
-  .lesson-block {
+  .lessonBlock {
     flex-direction: column;
     padding: 3vh;
-    &-title {
+    &Title {
       width: 100%;
       display: flex;
       justify-content: space-evenly;
@@ -92,7 +92,7 @@
         display: inline;
       }
     }
-    &-icons {
+    &Icons {
       display: flex;
       width: 100%;
       flex-direction: row;

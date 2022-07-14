@@ -4,25 +4,28 @@ $sand: #dbcca5;
 $darkNavy: #2e3c49;
 $green: #4f5957;
 
-.study-container {
+.studyContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
   margin: 3vh 0 0 0;
 
-  .back-link {
+  .backLink {
     align-self: flex-start;
     margin: 2vh;
     color: $gold;
     display: flex;
     align-items: center;
+    a {
+      color: $gold;
+    }
     svg {
       height: 1em;
       margin-right: 0.5em;
     }
   }
-  .study-info {
+  .studyInfo {
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -31,15 +34,15 @@ $green: #4f5957;
     img {
       width: 100%;
     }
-    &-title {
+    &StudyTitle {
       text-align: center;
       font-weight: 700;
     }
 
-    &-documents {
+    &Documents {
     }
 
-    &-details {
+    &Details {
       display: grid;
       grid-template-columns: 1fr 1fr;
       row-gap: 20px;
@@ -52,7 +55,7 @@ $green: #4f5957;
         align-items: center;
         justify-content: center;
       }
-      &-lessons {
+      &Lessons {
         h3 {
           font-size: 2.5em;
         }
@@ -63,26 +66,26 @@ $green: #4f5957;
         font-size: 1em;
       }
     }
-    .supporting-text {
+    .supportingText {
       font-size: 0.9em;
       color: grey;
       margin: 0;
       padding: 0;
     }
-    .teacher-container {
+    .teacherContainer {
       display: flex;
       flex-direction: column;
       align-items: center;
       font-size: 1em;
       text-align: center;
-      &-photo {
+      &Photo {
         position: relative;
         overflow: hidden;
         width: 80px;
         height: 80px;
         border-radius: 50%;
       }
-      img {
+      .photo {
         width: 100%;
         height: auto;
         min-width: auto !important;
@@ -91,14 +94,14 @@ $green: #4f5957;
       }
     }
 
-    &-body-ministry-link {
+    &BodyMinistryLink {
       text-align: center;
       p {
         color: $darkNavy;
       }
     }
   }
-  .lesson-list {
+  .lessonList {
     width: 40%;
     text-align: center;
   }
@@ -106,17 +109,17 @@ $green: #4f5957;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    .study-info {
+    .studyInfo {
       width: 90%;
       align-items: center;
       margin: 0;
 
-      &-title {
+      &StudyTitle {
         text-align: center;
         font-weight: 700;
       }
     }
-    .lesson-list {
+    .lessonList {
       width: 100%;
       text-align: center;
     }

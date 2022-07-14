@@ -30,10 +30,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/bible-studies.js"
     ],
-    "/bible-studies/[studyName]": [
+    "/giving": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/bible-studies/[studyName].js"
+      "static/chunks/pages/giving.js"
     ]
   },
   "ampFirstPages": []
