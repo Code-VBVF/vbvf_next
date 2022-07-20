@@ -10,15 +10,17 @@ import MemorialService from "../src/components/memorial-service";
 var sortBy = require("lodash.sortby");
 
 export async function getStaticProps() {
-  if (livestreamHappeningNow() === null) {
+  const whichStream = await livestreamHappeningNow();
+  if (whichStream === null) {
     const previousServiceVideos = await fetch(
-      `https://api.vimeo.com/me/projects/${process.env.VIMEO_FOLDER}/videos?direction=desc`,
+      `https://api.vimeo.com/me/projects/${process.env.VIMEO_FOLDER}/videos?sort=last_user_action_event_date&direction=desc&per_page=3`,
       {
         headers: {
           Authorization: process.env.VIMEO_KEY,
         },
       }
     );
+
     const previousVideos = await previousServiceVideos.json();
     return { props: { previousVideos } };
   } else {
@@ -43,12 +45,13 @@ export async function getStaticProps() {
     return {
       props: {
         data: res,
+        whichStream,
       },
     };
   }
 }
 
-export default function Livestream({ data, previousVideos }) {
+export default function Livestream({ data, previousVideos, whichStream }) {
   const [wednesdaySeries, setWednesdaySeries] = useState(
     data?.wednesdaySeries[0]
   );
@@ -56,15 +59,9 @@ export default function Livestream({ data, previousVideos }) {
   const [sundayArchiveVideos, setSundayArchiveVideos] = useState(
     previousVideos?.data ?? null
   );
-  console.log(data);
+
   const streamArchive = () => {
-    const sortedVideos = sortBy(
-      sundayArchiveVideos,
-      "last_user_action_event_date"
-    )
-      .reverse()
-      .slice(0, 3);
-    return sortedVideos.map((video) => (
+    return sundayArchiveVideos.map((video) => (
       <>
         <h3>{video.name}</h3>
         <div
@@ -83,7 +80,7 @@ export default function Livestream({ data, previousVideos }) {
     <div className={styles.livestream}>
       <h1>Livestream</h1>
 
-      {livestreamHappeningNow() === "wednesday" ? ( //if it's wednesday return the active series happening on wednesday
+      {whichStream === "wednesday" ? ( //if it's wednesday return the active series happening on wednesday
         <Stream
           streamUrl="https://vimeo.com/event/49116/embed"
           title={wednesdaySeries.title}
@@ -92,7 +89,7 @@ export default function Livestream({ data, previousVideos }) {
           notesUrl={wednesdaySeries.notesUrl}
           questionUrl={wednesdaySeries.questionUrl}
         />
-      ) : livestreamHappeningNow() === "sunday" ? ( //return sunday stream
+      ) : whichStream === "sunday" ? ( //return sunday stream
         <Stream
           streamUrl="https://vimeo.com/event/51649/embed"
           title={sundaySeries.title}
@@ -101,17 +98,17 @@ export default function Livestream({ data, previousVideos }) {
           notesUrl={sundaySeries.notesUrl}
           questionUrl={sundaySeries.questionUrl}
         />
-      ) : livestreamHappeningNow() === "memorial" ? ( // environment variable is memorial
+      ) : whichStream === "memorial" ? ( // environment variable is memorial
         // return memorial service
 
         <MemorialService />
-      ) : livestreamHappeningNow() === "guestTeacher" ? ( //returning component with no description for guest teacher
+      ) : whichStream === "guestTeacher" ? ( //returning component with no description for guest teacher
         <Stream
           streamUrl="https://vimeo.com/event/51649/embed"
           title=""
           description=""
         />
-      ) : livestreamHappeningNow() === "christmas" ? ( //returning component with no description for guest teacher
+      ) : whichStream === "christmas" ? ( //returning component with no description for guest teacher
         <Stream
           streamUrl="https://vimeo.com/event/51649/embed"
           title="Christmas Eve Service"

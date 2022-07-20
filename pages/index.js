@@ -12,6 +12,10 @@ import Preview from "../src/components/preview";
 import AlertBubble from "../src/components/alert-bubble";
 import { livestreamHappeningNow } from "../src/util";
 
+export async function getStaticProps() {
+  return { props: { isLiveStreamHappening: await livestreamHappeningNow() } };
+}
+
 const monthNames = [
   "January",
   "February",
@@ -29,15 +33,14 @@ const monthNames = [
 // TODO: Create separate constants file
 const BAPTISM_WEEK_NUM = 3;
 
-const liveStreamButtonText = () => {
-  if (livestreamHappeningNow()) {
-    return "View livestream";
-  } else {
-    return "View past services";
-  }
-};
-
-export default function Home() {
+export default function Home({ isLiveStreamHappening }) {
+  const liveStreamButtonText = () => {
+    if (isLiveStreamHappening) {
+      return "View livestream";
+    } else {
+      return "View past services";
+    }
+  };
   // const query = `{'pageData': *[_type == "page" && title == "Home"]{
   //   paragraphs,
   //   scripture,
