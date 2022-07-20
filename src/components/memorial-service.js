@@ -1,13 +1,14 @@
 import React from "react";
 
-import "../css/stream.scss";
-import "../css/memorial-service.scss";
+import memorialStyles from "../css/streamPage.module.scss";
+
+import styles from "../css/memorialService.module.scss";
 import ConnectWidget from "./connect-widget";
 
 export default function MemorialService(props) {
   return (
-    <div className="stream">
-      <div className="stream-video-player">
+    <div className={styles.stream}>
+      <div className={styles.streamVideoPlayer}>
         <iframe
           title="Memorial Service for Stephen Armstrong"
           src="https://vimeo.com/event/1105908/embed"
@@ -17,10 +18,10 @@ export default function MemorialService(props) {
         ></iframe>
       </div>
 
-      <div className="stream-supporting-materials">
+      <div className={styles.streamSupportingMaterials}>
         <ConnectWidget />
 
-        <div className="memorial-info">
+        <div className={memorialStyles.memorialInfo}>
           <h2>Celebration of life for Stephen Armstrong</h2>
 
           <span id="streaming-difficulties">

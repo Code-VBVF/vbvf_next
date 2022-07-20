@@ -1,14 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "../css/stream.scss";
+import Link from "next/link";
+import styles from "../css/streamPage.module.scss";
 
 import ConnectWidget from "../components/connect-widget";
 import Button from "./button";
 
 export default function Stream(props) {
   return (
-    <div className="stream">
-      <div className="stream-video-player">
+    <div className={styles.stream}>
+      <div className={styles.streamVideoPlayer}>
         <iframe
           title={props.title}
           src={props.streamUrl}
@@ -18,12 +18,12 @@ export default function Stream(props) {
         ></iframe>
       </div>
 
-      <div className="stream-supporting-materials">
+      <div className={styles.streamSupportingMaterials}>
         <ConnectWidget />
-        <div className="stream-supporting-materials-from-cms">
+        <div className={styles.streamSupportingMaterialsFromCms}>
           <h2>{props.title}</h2>
           {props.notesUrl && (
-            <div className="documents">
+            <div className={styles.documents}>
               <Button
                 title="Sermon Notes"
                 size="md"
@@ -40,7 +40,9 @@ export default function Stream(props) {
           )}
           <p>{props.description}</p>
           {props.seriesLink && (
-            <Link to={props.seriesLink}>Watch the rest of this series</Link>
+            <Link href={props.seriesLink}>
+              <a>Watch the rest of this series</a>
+            </Link>
           )}
         </div>
       </div>

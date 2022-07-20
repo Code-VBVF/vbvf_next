@@ -56,16 +56,6 @@ export function isMobileDevice() {
   }
 }
 
-export async function getVideos(vimeoFolder) {
-  const options = {
-    url: `https://api.vimeo.com/me/projects/${vimeoFolder}/videos?direction=desc`,
-    headers: {
-      Authorization: process.env.REACT_APP_VIMEO_KEY,
-    },
-  };
-  return axios(options);
-}
-
 export function isOver(date) {
   const end = new Date();
   const dateArr = date.split("-");
@@ -117,8 +107,8 @@ export function livestreamHappeningNow() {
   // convert msec value to date string
   const nd = new Date(usa);
 
-  if (process.env.REACT_APP_STREAM !== "none") {
-    return process.env.REACT_APP_STREAM;
+  if (process.env.STREAM !== "none") {
+    return process.env.STREAM;
   } else {
     if (
       nd.getDay() === 3 && //wednesday

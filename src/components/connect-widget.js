@@ -1,47 +1,44 @@
 import React, { useEffect, useState } from "react";
 import Button from "./button";
-import { Link } from "react-router-dom";
-import "../css/connect-widget.scss";
+import Link from "next/link";
+import styles from "../css/connectWidget.module.scss";
 import { sanity } from "../util/index";
-import { Spinner } from "reactstrap";
 
-export default function ConnectWidget() {
-  const [kidsUnit, setKidsUnit] = useState("");
-
-  const kidsQuery = `*[_type == "childrensUnit"] | order(_createdAt desc) [0] {unitNumber}`;
-  useEffect(() => {
-    sanity.fetch(kidsQuery).then((unit) => {
-      setKidsUnit(unit.unitNumber);
-    });
-  }, [kidsQuery]);
+export async function getStaticProps() {
+  const query = `*[_type == "childrensUnit"] | order(_createdAt desc) [0] {unitNumber}`;
+  const res = await sanity.fetch(query);
+  return { props: { res } };
+}
+export default function ConnectWidget({ data }) {
+  const [kidsUnit, setKidsUnit] = useState(data);
 
   return (
-    <div className="connect-widget">
+    <div className={styles.connectWidget}>
       <h5>VBVF Resources</h5>
       <ul>
         <li>
-          {kidsUnit === "" ? (
-            <>
-              Loading <Spinner color="dark" />
-            </>
-          ) : (
-            <Link to={`/childrens-content/unit-${kidsUnit}`}>
-              Journey Kids Lesson
-            </Link>
-          )}
+          <Link href={`/childrens-content/unit-${kidsUnit}`}>
+            <a>Journey Kids Lesson</a>
+          </Link>
         </li>
         <li>
-          <Link to="/about/faq">Read our FAQ</Link>
+          <Link href="/about/faq">
+            <a>Read our FAQ</a>
+          </Link>
         </li>
         <li>
-          <Link to="/about/beliefs">What we believe</Link>
+          <Link href="/about/beliefs">
+            <a>What we believe</a>
+          </Link>
         </li>
         <li>
-          <Link to="/bible-studies">More bible teaching</Link>
+          <Link href="/bible-studies">
+            <a>More bible teaching</a>
+          </Link>
         </li>
       </ul>
       <h5>Get in Touch</h5>
-      <div className="connect-widget-button-container">
+      <div className={styles.connectWidgetButtonContainer}>
         <Button
           size="small"
           color="green"
