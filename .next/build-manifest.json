@@ -30,15 +30,20 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/attend": [
+    "/childrens-ministry": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/attend.js"
+      "static/chunks/pages/childrens-ministry.js"
     ],
-    "/contact": [
+    "/childrens-ministry/content": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/contact.js"
+      "static/chunks/pages/childrens-ministry/content.js"
+    ],
+    "/childrens-ministry/content/[unit]": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/childrens-ministry/content/[unit].js"
     ]
   },
   "ampFirstPages": []
