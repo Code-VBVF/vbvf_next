@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import "../css/contact.scss";
+import styles from "../src/css/contact.module.scss";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { motion } from "framer-motion";
 
 const Contact = () => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+  const phoneRegExp =
+    /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
   const icon = {
     hidden: {
@@ -31,17 +32,17 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact">
+    <div className={styles.contact}>
       <h3>Have a question? Need Prayer?</h3>
       <h1>Contact Us</h1>
       {/* renders confirmation component when form is submitted */}
       {isFormSubmitted ? (
-        <div className="contact-submitted">
-          <div className="contact-submitted-check-container">
+        <div className={styles.contactSubmitted}>
+          <div className={styles.contactSubmittedCheckContainer}>
             <motion.svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
-              className="contact-submitted-check-container-item"
+              className={styles.contactSubmittedCheckContainerItem}
             >
               <motion.path
                 d="M0 11l2-2 5 5L18 3l2 2L7 18z"
@@ -123,33 +124,38 @@ const Contact = () => {
           })}
         >
           {(formik) => (
-            <Form className="contact" method="POST">
+            <Form
+              className={styles.contact}
+              method="POST"
+              name="contact"
+              data-netlify="true"
+            >
               <Field type="hidden" name="bot-field" />
               <Field type="hidden" name="form-name" />
               <Field
-                className="contact-text-field"
+                className={styles.contactTextField}
                 name="firstName"
                 {...formik.getFieldProps("firstName")}
                 placeholder="First Name"
               />
               <ErrorMessage
                 component="div"
-                className="contact-error-message"
+                className={styles.contactErrorMessage}
                 name="firstName"
               />
               <Field
-                className="contact-text-field"
+                className={styles.contactTextField}
                 name="lastName"
                 {...formik.getFieldProps("lastName")}
                 placeholder="Last Name"
               />
               <ErrorMessage
                 component="div"
-                className="contact-error-message"
+                className={styles.contactErrorMessage}
                 name="lastName"
               />
               <Field
-                className="contact-text-field"
+                className={styles.contactTextField}
                 name="phoneNumber"
                 {...formik.getFieldProps("phoneNumber")}
                 placeholder="000-000-0000"
@@ -157,21 +163,21 @@ const Contact = () => {
               <ErrorMessage
                 component="div"
                 name="phoneNumber"
-                className="contact-error-message"
+                className={styles.contactErrorMessage}
               ></ErrorMessage>
               <Field
-                className="contact-text-field"
+                className={styles.contactTextField}
                 name="email"
                 {...formik.getFieldProps("email")}
                 placeholder="Email"
               />
               <ErrorMessage
                 component="div"
-                className="contact-error-message"
+                className={styles.contactErrorMessage}
                 name="email"
               />
               <h4>Are you located in the San Antonio area?</h4>
-              <div role="group" className="contact-checkbox-group">
+              <div role="group" className={styles.contactCheckboxGroup}>
                 <label>
                   <Field type="radio" name="localToSa" value="Yes" />
                   Yes
@@ -184,10 +190,10 @@ const Contact = () => {
               <ErrorMessage
                 name="localToSa"
                 component="div"
-                className="contact-error-message"
+                className={styles.contactErrorMessage}
               />
               <h4>How should we contact you?</h4>
-              <div role="group" className="contact-checkbox-group">
+              <div role="group" className={styles.contactCheckboxGroup}>
                 <label>
                   <Field type="checkbox" name="contactOptions" value="Phone" />
                   Phone
@@ -199,11 +205,11 @@ const Contact = () => {
               </div>
               <ErrorMessage
                 component="div"
-                className="contact-error-message"
+                className={styles.contactErrorMessage}
                 name="contactOptions"
               />
               <Field
-                className="contact-text-area"
+                className={styles.contactTextArea}
                 component="textarea"
                 rows="10"
                 cols="50"
@@ -213,7 +219,7 @@ const Contact = () => {
               />
               <ErrorMessage
                 component="div"
-                className="contact-error-message"
+                className={styles.contactErrorMessage}
                 name="message"
               />
               <button type="submit">Submit</button>
@@ -222,23 +228,23 @@ const Contact = () => {
         </Formik>
       )}
 
-      <div className="contact-info">
+      <div className={styles.contactInfo}>
         <h2>
-          <span className="highlight">Verse by Verse Fellowship</span> Contact
-          Info
+          <span className={styles.highlight}>Verse by Verse Fellowship</span>{" "}
+          Contact Info
         </h2>
-        <div className="contact-info-block-group">
-          <div className="contact-info-block">
+        <div className={styles.contactInfoBlockGroup}>
+          <div className={styles.contactInfoBlock}>
             <h4>Email</h4>
             <p>
               <a href="mailto:info@vbvf.org">info@vbvf.org</a>
             </p>
           </div>
-          <div className="contact-info-block">
+          <div className={styles.contactInfoBlock}>
             <h4>Mailing Address</h4>
             <p>814 Arion Parkway, #410 San Antonio, TX 78216</p>
           </div>
-          <div className="contact-info-block">
+          <div className={styles.contactInfoBlock}>
             <h4>Phone Number</h4>
             <p>210-460-7556</p>
           </div>

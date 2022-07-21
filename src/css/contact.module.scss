@@ -10,14 +10,14 @@ $green: #4f5957;
   flex-direction: column;
   align-items: center;
 
-  &-text-field {
+  &TextField {
     width: 30%;
     margin: 1vh;
     border: 1px solid $darkNavy;
     border-radius: 5px;
   }
 
-  &-checkbox-group {
+  &CheckboxGroup {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -29,7 +29,7 @@ $green: #4f5957;
       }
     }
   }
-  &-error-message {
+  &ErrorMessage {
     color: $gold;
     display: block;
     margin: -5px 0 2vh 0;
@@ -52,7 +52,7 @@ $green: #4f5957;
     }
   }
 
-  &-info {
+  &Info {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,25 +60,25 @@ $green: #4f5957;
     .highlight {
       color: $gold;
     }
-    &-block-group {
+    &BlockGroup {
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
       align-items: center;
       margin: 1vh 0 0 0;
     }
-    &-block {
+    &Block {
       width: 33%;
       margin: 5px;
       text-align: center;
     }
   }
-  &-submitted {
+  &Submitted {
     flex-direction: column;
     align-items: center;
     text-align: center;
 
-    &-check-container {
+    &CheckContainer {
       display: flex;
       align-items: center;
       overflow: hidden;
@@ -88,7 +88,7 @@ $green: #4f5957;
       background: $green;
       place-content: center;
       border-radius: 30px;
-      &-item {
+      &Item {
         width: 56%;
         overflow: visible;
         stroke: #fff;
@@ -105,23 +105,23 @@ $green: #4f5957;
     h3 {
       font-size: 1.2em;
     }
-    &-text-field {
+    &TextField {
       width: 80%;
     }
 
-    &-text-area {
+    &TextArea {
       width: 80%;
     }
-    &-info {
+    &Info {
       text-align: center;
       width: 80%;
 
-      &-block-group {
+      &BlockGroup {
         flex-direction: column;
         align-items: center;
         margin: 30px 0 0 0;
       }
-      &-block {
+      &Block {
         width: 60%;
         margin: 5px;
         text-align: center;
