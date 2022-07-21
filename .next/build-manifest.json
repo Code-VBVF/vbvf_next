@@ -30,20 +30,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/childrens-ministry": [
+    "/registration-redirect": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/childrens-ministry.js"
-    ],
-    "/childrens-ministry/content": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/childrens-ministry/content.js"
-    ],
-    "/childrens-ministry/content/[unit]": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/childrens-ministry/content/[unit].js"
+      "static/chunks/pages/registration-redirect.js"
     ]
   },
   "ampFirstPages": []

@@ -62,7 +62,7 @@ export default function StudyAggregator({ data }) {
           <Link
             target={"blank"}
             rel="noopener noreferrer"
-            href={"/sermon-redirect"}
+            href={"https://www.versebyverseministry.org/"}
           >
             Verse by Verse Ministry
           </Link>

@@ -10,15 +10,6 @@ export default function Giving(props) {
 
   const onlineModalToggle = () => setOnlineModal(!onlineModal);
   const mailModalToggle = () => setMailModal(!mailModal);
-  const [givingLink, setGivingLink] = useState("/giving-redirect");
-
-  useEffect(() => {
-    getMobileOperatingSystem() === "iOS"
-      ? setGivingLink("/giving-redirect")
-      : setGivingLink(
-          "https://vbvf.churchcenter.com/giving?open-in-church-center-modal=true"
-        );
-  }, [givingLink]);
 
   return (
     <div className={styles.giving}>
@@ -29,7 +20,14 @@ export default function Giving(props) {
           Fellowship.
         </p>
       </div>
-      <Button size="large" color="green" link={givingLink} title="Give Now" />
+      <Button
+        size="large"
+        color="green"
+        link={
+          "https://vbvf.churchcenter.com/giving?open-in-church-center-modal=true"
+        }
+        title="Give Now"
+      />
 
       <div className={styles.givingOptionQuestion}>
         <p>I have questions about giving:</p>

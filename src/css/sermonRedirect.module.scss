@@ -1,0 +1,49 @@
+.redirect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &Desc {
+    width: 75%;
+    margin: 5vh;
+
+    h1 {
+      text-align: center;
+    }
+  }
+
+  &Buttons {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10vh;
+  }
+  &Images {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    #arrow {
+      width: 10%;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .redirect {
+      &Desc {
+        width: 90%;
+      }
+      &Buttons {
+        width: 80%;
+      }
+      &Images {
+        #arrow {
+          width: 20%;
+        }
+        img {
+          width: 40%;
+        }
+      }
+    }
+  }
+}

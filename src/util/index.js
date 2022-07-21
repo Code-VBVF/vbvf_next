@@ -6,6 +6,7 @@ const SanityClient = require("@sanity/client");
 export const sanity = new SanityClient({
   projectId: "bhphg9ym",
   dataset: "production",
+  apiVersion: "2022-07-21",
   useCdn: true,
 });
 
