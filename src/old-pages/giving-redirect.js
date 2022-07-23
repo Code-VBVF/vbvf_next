@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "../css/sermon-redirect.scss";
-import VbvfLogo from "../images/logos/vbvf_logo_full.png";
-import GivingLogo from "../images/logos/giving_logo.png";
-import Arrow from "../images/arrow-thick-right.svg";
-import Button from "../components/button";
+import VbvfLogo from "../public/images/logos/vbvf_logo_full.png";
+import GivingLogo from "../public/images/logos/giving_logo.png";
+import Arrow from "../public/images/arrow-thick-right.svg";
+import Button from "../../components/button";
 import { useRouter } from "next/router";
 
 const GivingRedirect = (props) => {
