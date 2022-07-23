@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import styles from "../src/css/giving.module.scss";
+import styles from "../css//giving.module.scss";
 import { Modal, ModalHeader, ModalBody } from "reactstrap";
-import Button from "../src/components/button";
+import Button from "../components/button";
 
-import { getMobileOperatingSystem } from "../src/util/index";
+import { getMobileOperatingSystem } from "../util/index";
 export default function Giving(props) {
   const [onlineModal, setOnlineModal] = useState(false);
   const [mailModal, setMailModal] = useState(false);

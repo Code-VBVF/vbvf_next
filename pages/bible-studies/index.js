@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import styles from "../../src/css/studyAggregator.module.scss";
+import styles from "../../css/studyAggregator.module.scss";
 import Link from "next/link";
-import { sanity, sanityUrlFor, isOver } from "../../src/util/index";
-import AlertBubble from "../../src/components/alert-bubble";
+import { sanity, sanityUrlFor, isOver } from "../../util/index";
+import AlertBubble from "../../components/alert-bubble";
 import Image from "next/image";
 
 export async function getStaticProps() {

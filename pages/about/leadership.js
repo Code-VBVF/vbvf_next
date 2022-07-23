@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import styles from "../../src/css/leadership.module.scss";
-import { sanity, sanityUrlFor } from "../../src/util/index";
-import PhotoTitle from "../../src/components/photo-title";
+import styles from "../../css/leadership.module.scss";
+import { sanity, sanityUrlFor } from "../../util/index";
+import PhotoTitle from "../../components/photo-title";
 
-import AboutMenu from "../../src/components/about-menu";
+import AboutMenu from "../../components/about-menu";
 
 export async function getStaticProps() {
   const query = `{'elders': *[_type == "person" && (role == "Elder" || role == "Senior Pastor")] | order(name asc), 'pastors': *[_type == "person" && role == "Associate Pastor"] | order(name asc), 'directors': *[_type == "person" && role == "Ministry Director" || role == "Staff" || role == "Volunteer Staff"] | order(name asc)}`;

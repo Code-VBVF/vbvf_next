@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { sanity } from "../src/util/index";
+import { sanity } from "../util/index";
 import PortableText from "@sanity/block-content-to-react";
 import { format } from "date-fns";
-import styles from "../src/css/announcements.module.scss";
-import FrequentlyAskedQuestions from "../src/components/frequently-asked-questions";
+import styles from "../css//announcements.module.scss";
+import FrequentlyAskedQuestions from "../components/frequently-asked-questions";
 
 export async function getStaticProps() {
   const query = `{'announcement': *[_type == "biWeeklyAnnouncements" ] | order(_createdAt desc) [0], 'faq':*[_type == "page" && title == "About Page"]{faq} }`;

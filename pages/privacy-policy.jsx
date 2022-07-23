@@ -1,6 +1,6 @@
 import { React } from "react";
 import Link from "next/link";
-import styles from "../src/css/terms-privacy.module.css";
+import styles from "../css//terms-privacy.module.css";
 
 export default function PrivacyPolicy() {
   return (

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import styles from "../../../src/css/childrensContentAggregator.module.scss";
+import styles from "../../../css/childrensContentAggregator.module.scss";
 
 import Link from "next/link";
 import { Card, CardTitle, CardSubtitle, CardImg } from "reactstrap";
-import { sanity, sanityUrlFor } from "../../../src/util/index";
+import { sanity, sanityUrlFor } from "../../../util/index";
 
 export async function getStaticProps() {
   const query = `*[_type == "childrensUnit"] | order(unitNumber asc) {

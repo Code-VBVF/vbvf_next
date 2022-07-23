@@ -1,6 +1,6 @@
 import React from "react";
-import AboutMenu from "../../src/components/about-menu";
-import styles from "../../src/css/our-story.module.scss";
+import AboutMenu from "../../components/about-menu";
+import styles from "../../css/our-story.module.scss";
 
 export default function OurStory() {
   return (

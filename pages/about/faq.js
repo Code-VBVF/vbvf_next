@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Spinner } from "reactstrap";
-import FrequentlyAskedQuestions from "../../src/components/frequently-asked-questions";
-import { sanity } from "../../src/util/index";
-import styles from "../../src/css/faq.module.scss";
-import AboutMenu from "../../src/components/about-menu";
-// import AlertBubble from "../../src/components/alert-bubble";
+import FrequentlyAskedQuestions from "../../components/frequently-asked-questions";
+import { sanity } from "../../util/index";
+import styles from "../../css/faq.module.scss";
+import AboutMenu from "../../components/about-menu";
+// import AlertBubble from "../../components/alert-bubble";
 
 export async function getStaticProps() {
   const query = `*[_type == "page" && title == "About Page"]{...}`;

@@ -1,20 +1,22 @@
 import React, { useState } from "react";
-import { sanity } from "../src/util/index";
-import { serializers } from "../src/util/sanity-serializers";
-import styles from "../src/css/careMinistry.module.scss";
-import FrequentlyAskedQuestions from "../src/components/frequently-asked-questions";
-import ScriptureVerse from "../src/components/scripture-verse";
+import { sanity, sanityUrlFor } from "../util/index";
+import { serializers } from "../util/sanity-serializers";
+import styles from "../css//careMinistry.module.scss";
+import FrequentlyAskedQuestions from "../components/frequently-asked-questions";
+import ScriptureVerse from "../components/scripture-verse";
 import PortableText from "@sanity/block-content-to-react";
-import CareMinistryForm from "../src/components/care-ministry-form";
+import CareMinistryForm from "../components/care-ministry-form";
 import { DialogOverlay, DialogContent } from "@reach/dialog";
 import "@reach/dialog/styles.css";
-import Button from "../src/components/button";
+import Button from "../components/button";
+import StaffInfo from "../components/staff-info";
 
 export async function getStaticProps() {
   const query = `*[_type == "page" && title == "Care Ministries"]{
     paragraphs,
     faq,
-    scripture
+    scripture,
+    ministryLeader->
   }`;
   const res = await sanity.fetch(query);
   const data = await res[0];
@@ -22,7 +24,6 @@ export async function getStaticProps() {
 }
 export default function CareMinistry({ data }) {
   const [pageData, setPageData] = useState(data);
-
   //modal state
   const [showDialog, setShowDialog] = React.useState(false);
   const open = () => setShowDialog(true);
@@ -115,6 +116,16 @@ export default function CareMinistry({ data }) {
 
       <h3>FAQ</h3>
       <FrequentlyAskedQuestions layout="vertical" faq={pageData?.faq.faqs} />
+      {pageData.ministryLeader && (
+        <StaffInfo
+          name={pageData?.ministryLeader.name}
+          role={pageData?.ministryLeader.role}
+          email={pageData?.ministryLeader.email}
+          bio={pageData?.ministryLeader.bio}
+          image={sanityUrlFor(pageData?.ministryLeader.image).width(500).url()}
+          alt=""
+        />
+      )}
     </div>
   );
 }

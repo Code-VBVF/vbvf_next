@@ -1,0 +1,16 @@
+.ourStory {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &Text {
+    width: 55%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .ourStory {
+    &Text {
+      width: 90%;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import styles from "../src/css/notFound.module.scss";
+import styles from "../css//notFound.module.scss";
 
 export default function NotFound() {
   return (

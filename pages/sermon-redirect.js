@@ -3,7 +3,7 @@ import "../css/sermon-redirect.scss";
 import VbvfLogo from "../images/logos/vbvf_logo_full.png";
 import VbvmiLogo from "../images/logos/vbvmi_logo.png";
 import Arrow from "../images/arrow-thick-right.svg";
-import Button from "../src/components/button";
+import Button from "../components/button";
 
 const SermonRedirect = (props) => {
   const [counter, setCounter] = useState("10");

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-import { sanity, isOver, sanityUrlFor } from "../../src/util/index";
+import { sanity, isOver, sanityUrlFor } from "../../util/index";
 import Link from "next/link";
 
-import LessonBlock from "../../src/components/lesson-block";
+import LessonBlock from "../../components/lesson-block";
 
-import styles from "../../src/css/studyPage.module.scss";
+import styles from "../../css/studyPage.module.scss";
 import Image from "next/image";
 
 export async function getStaticPaths() {

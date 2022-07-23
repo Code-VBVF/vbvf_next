@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { isOver, livestreamHappeningNow } from "../src/util/index";
+import { isOver, livestreamHappeningNow } from "../util/index";
 import Link from "next/link";
 
-import Stream from "../src/components/stream";
-import { sanity } from "../src/util/index";
-import styles from "../src/css/livestream.module.scss";
-import MemorialService from "../src/components/memorial-service";
+import Stream from "../components/stream";
+import { sanity } from "../util/index";
+import styles from "../css//livestream.module.scss";
+import MemorialService from "../components/memorial-service";
 
 var sortBy = require("lodash.sortby");
 

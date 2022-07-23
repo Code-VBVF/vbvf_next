@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 
-import styles from "../src/css/smallGroups.module.scss";
+import styles from "../css//smallGroups.module.scss";
 
-import StaffInfo from "../src/components/staff-info";
+import StaffInfo from "../components/staff-info";
 import Logo from "../public/images/logos/small_group_logo.svg";
 import PortableText from "@sanity/block-content-to-react";
-import Button from "../src/components/button";
+import Button from "../components/button";
 import Praying from "../public/images/small_groups/praying.jpg";
-import AlertBubble from "../src/components/alert-bubble";
+import AlertBubble from "../components/alert-bubble";
 
-import { sanity, sanityUrlFor } from "../src/util/index";
-import { serializers } from "../src/util/sanity-serializers";
-import FrequentlyAskedQuestions from "../src/components/frequently-asked-questions";
+import { sanity, sanityUrlFor } from "../util/index";
+import { serializers } from "../util/sanity-serializers";
+import FrequentlyAskedQuestions from "../components/frequently-asked-questions";
 import Image from "next/image";
 
 export async function getStaticProps() {

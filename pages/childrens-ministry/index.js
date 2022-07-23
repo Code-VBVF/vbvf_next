@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PortableText from "@sanity/block-content-to-react";
 import JourneyLogo from "../../public/images/logos/journey-logo.png";
 import SofiJonBTS from "../../public/images/childrens_ministry/sofi_jon_bts.jpg";
-import styles from "../../src/css/childrensMinistry.module.scss";
-import ScriptureVerse from "../../src/components/scripture-verse";
-import Button from "../../src/components/button";
+import styles from "../../css/childrensMinistry.module.scss";
+import ScriptureVerse from "../../components/scripture-verse";
+import Button from "../../components/button";
 
-import StaffInfo from "../../src/components/staff-info";
-import { serializers } from "../../src/util/sanity-serializers";
-import { sanity, sanityUrlFor } from "../../src/util/index";
-import AlertBubble from "../../src/components/alert-bubble";
+import StaffInfo from "../../components/staff-info";
+import { serializers } from "../../util/sanity-serializers";
+import { sanity, sanityUrlFor } from "../../util/index";
+import AlertBubble from "../../components/alert-bubble";
 import Image from "next/image";
 
 export async function getStaticProps() {
@@ -20,6 +20,7 @@ export async function getStaticProps() {
   }`;
   const res = await sanity.fetch(query);
   const data = await res[0];
+
   return { props: { data } };
 }
 export default function ChildrensMinistry({ data }) {
@@ -84,7 +85,7 @@ export default function ChildrensMinistry({ data }) {
           }}
         />
       </div>
-      {pageData.ministryLeader !== undefined ? (
+      {pageData.ministryLeader && (
         <StaffInfo
           name={pageData?.ministryLeader.name}
           role={pageData?.ministryLeader.role}
@@ -93,7 +94,7 @@ export default function ChildrensMinistry({ data }) {
           image={sanityUrlFor(pageData?.ministryLeader.image).width(500).url()}
           alt=""
         />
-      ) : null}
+      )}
     </div>
   );
 }

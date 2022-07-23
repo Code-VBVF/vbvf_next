@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import styles from "../src/css/attendService.module.scss";
+import styles from "../css//attendService.module.scss";
 import PortableText from "@sanity/block-content-to-react";
-import { sanity } from "../src/util/index";
-import { serializers } from "../src/util/sanity-serializers";
+import { sanity } from "../util/index";
+import { serializers } from "../util/sanity-serializers";
 
 export async function getStaticProps() {
   const query = `*[_type == "page" && title == "Attend a Service"]{

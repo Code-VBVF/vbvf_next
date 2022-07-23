@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 
 import smoothscroll from "smoothscroll-polyfill";
 
-import { sanity } from "../../../src/util/index";
-import styles from "../../../src/css/childrensUnitPage.module.scss";
+import { sanity } from "../../../util/index";
+import styles from "../../../css/childrensUnitPage.module.scss";
 import Link from "next/link";
 
 export async function getStaticPaths() {

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../src/css/contact.module.scss";
+import styles from "../css//contact.module.scss";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { motion } from "framer-motion";

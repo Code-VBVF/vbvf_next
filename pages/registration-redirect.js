@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import styles from "../src/css/sermonRedirect.module.scss";
+import styles from "../css//sermonRedirect.module.scss";
 import VbvfLogo from "../public/images/logos/vbvf_logo_full.png";
 import RegistrationsLogo from "../public/images/logos/registrations_logo.png";
 import Arrow from "../public/images/arrow-thick-right.svg";
-import Button from "../src/components/button";
+import Button from "../components/button";
 import { useRouter } from "next/router";
 import Image from "next/image";
 

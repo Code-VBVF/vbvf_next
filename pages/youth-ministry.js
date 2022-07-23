@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
 import LogosLogo from "../public/images/logos/logos-logo.png";
 import Volunteer from "../public/images/youth_assets/volunteer_youth.jpg";
-import styles from "../src/css/youthMinistry.module.scss";
-import { serializers } from "../src/util/sanity-serializers";
-import { sanity, sanityUrlFor } from "../src/util/index";
+import styles from "../css//youthMinistry.module.scss";
+import { serializers } from "../util/sanity-serializers";
+import { sanity, sanityUrlFor } from "../util/index";
 import PortableText from "@sanity/block-content-to-react";
-import ScriptureVerse from "../src/components/scripture-verse";
-import StaffInfo from "../src/components/staff-info";
-import Button from "../src/components/button";
-import Spinner from "reactstrap/lib/Spinner";
-import FrequentlyAskedQuestions from "../src/components/frequently-asked-questions";
-import AlertBubble from "../src/components/alert-bubble";
+import ScriptureVerse from "../components/scripture-verse";
+import StaffInfo from "../components/staff-info";
+import Button from "../components/button";
+import FrequentlyAskedQuestions from "../components/frequently-asked-questions";
+import AlertBubble from "../components/alert-bubble";
 import Image from "next/image";
 
 export async function getStaticProps() {

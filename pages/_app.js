@@ -1,8 +1,8 @@
 import React from "react";
-import Layout from "../src/components/layout";
+import Layout from "../components/layout";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../src/css/App.css";
+import "../css/App.css";
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
