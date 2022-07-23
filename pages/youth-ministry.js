@@ -22,6 +22,7 @@ export async function getStaticProps() {
   }`;
   const res = await sanity.fetch(query);
   const data = await res[0];
+  console.log(data);
   return { props: { data } };
 }
 
@@ -76,7 +77,7 @@ export default function YouthMinistry({ data }) {
         </div>
       </div> */}
       <>
-        {pageData.ministryLeader !== undefined ? (
+        {pageData.ministryLeader && (
           <StaffInfo
             name={pageData?.ministryLeader.name}
             role={pageData?.ministryLeader.role}
@@ -87,7 +88,7 @@ export default function YouthMinistry({ data }) {
               .url()}
             alt=""
           />
-        ) : null}
+        )}
       </>
     </div>
   );

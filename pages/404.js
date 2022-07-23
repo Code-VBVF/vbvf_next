@@ -1,10 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "../css/not-found.scss";
+import Link from "next/link";
+import styles from "../src/css/notFound.module.scss";
 
-const NotFound = () => {
+export default function NotFound() {
   return (
-    <div className="not-found">
+    <div className={styles.notFound}>
       <h1>404</h1>
       <h3>
         This means that we couldn't find what you're looking for. Sorry about
@@ -16,17 +16,21 @@ const NotFound = () => {
       </p>
       <ul>
         <li>
-          <Link to="/bible-studies/">Bible study media</Link>
+          <Link href="/bible-studies/">
+            <a>Bible study media</a>
+          </Link>
         </li>
         <li>
-          <Link to="about/faq">FAQ</Link>
+          <Link href="about/faq">
+            <a>FAQ</a>
+          </Link>
         </li>
         <li>
-          <Link to="/livestream">Livestream</Link>
+          <Link href="/livestream">
+            <a>Livestream</a>
+          </Link>
         </li>
       </ul>
     </div>
   );
-};
-
-export default NotFound;
+}
