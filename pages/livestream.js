@@ -16,7 +16,7 @@ export async function getStaticProps() {
       `https://api.vimeo.com/me/projects/${process.env.VIMEO_FOLDER}/videos?sort=last_user_action_event_date&direction=desc&per_page=3`,
       {
         headers: {
-          Authorization: process.env.VIMEO_KEY,
+          Authorization: process.env.VIMEO_KEY_UPDATED,
         },
       }
     );
@@ -82,7 +82,7 @@ export default function Livestream({ data, previousVideos, whichStream }) {
 
       {whichStream === "wednesday" ? ( //if it's wednesday return the active series happening on wednesday
         <Stream
-          streamUrl="https://vimeo.com/event/49116/embed"
+          streamUrl="https://vimeo.com/event/2282207/embed"
           title={wednesdaySeries.title}
           description={wednesdaySeries.description}
           seriesLink={`/bible-studies/${wednesdaySeries.title}`}
@@ -91,7 +91,7 @@ export default function Livestream({ data, previousVideos, whichStream }) {
         />
       ) : whichStream === "sunday" ? ( //return sunday stream
         <Stream
-          streamUrl="https://vimeo.com/event/51649/embed"
+          streamUrl="https://vimeo.com/event/2282202/embed"
           title={sundaySeries.title}
           description={sundaySeries.description}
           seriesLink={`/bible-studies/${sundaySeries.title}`}
