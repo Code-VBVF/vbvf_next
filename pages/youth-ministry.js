@@ -21,7 +21,7 @@ export async function getStaticProps() {
   }`;
   const res = await sanity.fetch(query);
   const data = await res[0];
-  console.log(data);
+
   return { props: { data } };
 }
 

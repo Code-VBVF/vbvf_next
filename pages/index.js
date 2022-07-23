@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import homePage from "../css//homePage.module.scss";
 import Button from "../components/button";
 
 import { getOrdinalNum, nthWeekdayOfMonth } from "../util/index";
-// import BibleTeaching from "../images/home_page/mike_bible_teaching.jpeg";
 import DailyBread from "../public/images/home_page/daily_bread.jpeg";
 import MeetandGreet from "../public/images/home_page/MeetandGreet.jpg";
 import BaptismPhoto from "../public/images/home_page/anthony_baptism_horizontal_c.jpg";
@@ -12,10 +11,10 @@ import Preview from "../components/preview";
 import AlertBubble from "../components/alert-bubble";
 import { livestreamHappeningNow } from "../util";
 
-export async function getStaticProps() {
-  return { props: { isLiveStreamHappening: await livestreamHappeningNow() } };
+export async function getServerSideProps() {
+  const isLiveStreamHappening = await livestreamHappeningNow();
+  return { props: { isLiveStreamHappening } };
 }
-
 const monthNames = [
   "January",
   "February",

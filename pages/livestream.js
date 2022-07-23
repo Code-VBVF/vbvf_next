@@ -9,7 +9,7 @@ import MemorialService from "../components/memorial-service";
 
 var sortBy = require("lodash.sortby");
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const whichStream = await livestreamHappeningNow();
   if (whichStream === null) {
     const previousServiceVideos = await fetch(
