@@ -25,6 +25,11 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
+    "/bible-studies": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/bible-studies.js"
+    ],
     "/care-ministry": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",

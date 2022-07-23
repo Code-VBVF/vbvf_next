@@ -2,5 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/care-ministry": "pages/care-ministry.js"
+  "/bible-studies": "pages/bible-studies.js"
 }
