@@ -126,10 +126,11 @@ const Contact = () => {
           {(formik) => (
             <Form
               className={styles.contact}
-              method="POST"
               name="contact"
-              data-netlify="true"
+              data-netlify={true}
+              netlify-honeypot="bot-field"
             >
+              <input type="hidden" name="form-name" value="contact" />
               <Field type="hidden" name="bot-field" />
               <Field type="hidden" name="form-name" />
               <Field
@@ -253,5 +254,4 @@ const Contact = () => {
     </div>
   );
 };
-
 export default Contact;
