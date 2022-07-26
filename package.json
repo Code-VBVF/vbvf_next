@@ -2,6 +2,7 @@
   "name": "vbvf",
   "version": "0.1.0",
   "private": true,
+  "homepage": "",
   "dependencies": {
     "@babel/runtime": "^7.10.2",
     "@reach/dialog": "^0.16.2",
