@@ -1,0 +1,38 @@
+$gold: #e8b021;
+$lightNavy: #66788d;
+$sand: #dbcca5;
+$darkNavy: #2e3c49;
+$green: #4f5957;
+
+.connectWidget {
+  align-self: flex-start;
+  margin: 3vh;
+  ul {
+    width: 100%;
+  }
+  &ButtonContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  h5 {
+    margin-top: 10px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .connectWidget {
+    align-self: center;
+    text-align: center;
+    ul {
+      list-style-type: none;
+      padding: 0px;
+      li {
+        margin: 5px;
+      }
+    }
+
+    h5 {
+      align-self: flex-start;
+      font-size: 1.7em;
+    }
+  }
+}

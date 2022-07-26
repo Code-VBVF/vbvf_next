@@ -1,0 +1,25 @@
+.menuBar {
+  a {
+    font-family: "Roboto", sans-serif;
+    text-decoration: none;
+    margin: 10px;
+    color: black;
+    font-size: 1.25em;
+    text-transform: uppercase;
+    font-variant: small-caps;
+    font-weight: bold;
+  }
+
+  ul {
+    list-style: none;
+    padding-right: 30px;
+  }
+}
+
+.subMenu {
+  font-size: 1em;
+}
+
+.serviceTimeModal {
+  text-align: center;
+}
