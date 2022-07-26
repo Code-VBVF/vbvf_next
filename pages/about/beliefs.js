@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "../../src/css/beliefs.module.scss";
+import styles from "../../css/beliefs.module.scss";
 // import { Link } from "react-router-dom";
-import AboutMenu from "../../src/components/about-menu";
+import AboutMenu from "../../components/about-menu";
 
 export default function Beliefs() {
   return (

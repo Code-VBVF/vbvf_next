@@ -1,17 +1,20 @@
-import React from "react";
-import homePage from "../src/css/homePage.module.scss";
-import Button from "../src/components/button";
+import React, { useEffect, useState } from "react";
+import homePage from "../css//homePage.module.scss";
+import Button from "../components/button";
 
-import { getOrdinalNum, nthWeekdayOfMonth } from "../src/util/index";
-// import BibleTeaching from "../images/home_page/mike_bible_teaching.jpeg";
+import { getOrdinalNum, nthWeekdayOfMonth } from "../util/index";
 import DailyBread from "../public/images/home_page/daily_bread.jpeg";
 import MeetandGreet from "../public/images/home_page/MeetandGreet.jpg";
 import BaptismPhoto from "../public/images/home_page/anthony_baptism_horizontal_c.jpg";
 
-import Preview from "../src/components/preview";
-import AlertBubble from "../src/components/alert-bubble";
-import { livestreamHappeningNow } from "../src/util";
+import Preview from "../components/preview";
+import AlertBubble from "../components/alert-bubble";
+import { livestreamHappeningNow } from "../util";
 
+export async function getServerSideProps() {
+  const isLiveStreamHappening = await livestreamHappeningNow();
+  return { props: { isLiveStreamHappening } };
+}
 const monthNames = [
   "January",
   "February",
@@ -29,15 +32,14 @@ const monthNames = [
 // TODO: Create separate constants file
 const BAPTISM_WEEK_NUM = 3;
 
-const liveStreamButtonText = () => {
-  if (livestreamHappeningNow()) {
-    return "View livestream";
-  } else {
-    return "View past services";
-  }
-};
-
-const Home = () => {
+export default function Home({ isLiveStreamHappening }) {
+  const liveStreamButtonText = () => {
+    if (isLiveStreamHappening) {
+      return "View livestream";
+    } else {
+      return "View past services";
+    }
+  };
   // const query = `{'pageData': *[_type == "page" && title == "Home"]{
   //   paragraphs,
   //   scripture,
@@ -192,6 +194,4 @@ const Home = () => {
       </div> */}
     </div>
   );
-};
-
-export default Home;
+}

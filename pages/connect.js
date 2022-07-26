@@ -1,10 +1,10 @@
 import React from "react";
 import Attendee from "../public/images/connect/attending_meeting.jpg";
 import iPhones from "../public/images/connect/Iphones.png";
-import ConnectionStep from "../src/components/connection-steps";
-import styles from "../src/css/connect.module.scss";
-import Button from "../src/components/button";
-import { getMobileOperatingSystem } from "../src/util";
+import ConnectionStep from "../components/connection-steps";
+import styles from "../css//connect.module.scss";
+import Button from "../components/button";
+import { getMobileOperatingSystem } from "../util";
 import Image from "next/image";
 
 const ConnectPage = () => {
