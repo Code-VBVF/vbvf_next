@@ -7,8 +7,6 @@ import { sanity } from "../util/index";
 import styles from "../css//livestream.module.scss";
 import MemorialService from "../components/memorial-service";
 
-var sortBy = require("lodash.sortby");
-
 export async function getServerSideProps() {
   const whichStream = await livestreamHappeningNow();
   if (whichStream === null) {
@@ -22,8 +20,8 @@ export async function getServerSideProps() {
     );
 
     const previousVideos = await previousServiceVideos.json();
-    console.log(previousVideos);
-    return { props: { previousVideos, whichStream } };
+
+    return { props: { previousVideos: previousVideos.data, whichStream } };
   } else {
     const query = `{'wednesdaySeries': *[_type == "series" && meetingTime.day == "Wednesday" && endDate > now()]{
   title,
@@ -58,12 +56,9 @@ export default function Livestream({ data, previousVideos, whichStream }) {
   );
 
   const [sundaySeries, setSundaySeries] = useState(data?.sundaySeries[0]);
-  const [sundayArchiveVideos, setSundayArchiveVideos] = useState(
-    previousVideos.data.checking ?? null
-  );
 
   const streamArchive = () => {
-    return sundayArchiveVideos.map((video) => (
+    return previousVideos.map((video) => (
       <>
         <h3>{video.name}</h3>
         <div
