@@ -22,6 +22,7 @@ export async function getServerSideProps() {
     );
 
     const previousVideos = await previousServiceVideos.json();
+    console.log(previousVideos);
     return { props: { previousVideos, whichStream } };
   } else {
     const query = `{'wednesdaySeries': *[_type == "series" && meetingTime.day == "Wednesday" && endDate > now()]{
@@ -55,9 +56,10 @@ export default function Livestream({ data, previousVideos, whichStream }) {
   const [wednesdaySeries, setWednesdaySeries] = useState(
     data?.wednesdaySeries[0]
   );
+
   const [sundaySeries, setSundaySeries] = useState(data?.sundaySeries[0]);
   const [sundayArchiveVideos, setSundayArchiveVideos] = useState(
-    previousVideos.data ?? null
+    previousVideos.data.checking ?? null
   );
 
   const streamArchive = () => {
