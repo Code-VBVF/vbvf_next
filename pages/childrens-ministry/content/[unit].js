@@ -26,16 +26,20 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const sanityParams = { unitNumber: params.unit.split("-")[1] };
+  console.log("sanity paramgs: ", sanityParams);
   const query = `*[_type == "childrensUnit" && unitNumber == $unitNumber] | order(lessonNumber asc) {
   title,
   lessons[]{
     ...,
-    "olderUrl" : olderWorksheet.asset->url,
-    "youngerUrl":youngerWorksheet.asset->url,
-    "preschoolUrl":preschoolWorksheet.asset->url,
+    "twoThruThreeWorksheet" : twoThruThreeWorksheet.asset->url,
+    "prekWorksheet":prekWorksheet.asset->url,
+    "kinderThruThirdWorksheet":kinderThruThirdWorksheet.asset->url,
+    "fourthThruFifthWorksheet":fourthThruFifthWorksheet.asset->url,
+
   }
 }`;
   const res = await sanity.fetch(query, sanityParams);
+  console.log("results: ", res);
   return { props: { data: res } };
 }
 export default function ChildrensUnitPage({ data }) {
@@ -113,21 +117,28 @@ export default function ChildrensUnitPage({ data }) {
                 <button
                   target="blank"
                   rel="noopener noreferrer"
-                  onClick={() => window.open(lesson.preschoolUrl)}
+                  onClick={() => window.open(lesson.twoThruThreeWorksheet)}
                 >
-                  Preschool
+                  Ages 2-3 Worksheet
                 </button>
                 <button
                   target="blank"
                   rel="noopener noreferrer"
-                  onClick={() => window.open(lesson.youngerUrl)}
+                  onClick={() => window.open(lesson.prekWorksheet)}
                 >
-                  Kinder-2nd Grade
+                  PreK Worksheet
                 </button>
                 <button
                   target="blank"
                   rel="noopener noreferrer"
-                  onClick={() => window.open(lesson.olderUrl)}
+                  onClick={() => window.open(lesson.kinderThruThirdWorksheet)}
+                >
+                  Kinder-3rd Grade
+                </button>
+                <button
+                  target="blank"
+                  rel="noopener noreferrer"
+                  onClick={() => window.open(lesson.fourthThruFifthWorksheet)}
                 >
                   3rd-5th Grade
                 </button>
