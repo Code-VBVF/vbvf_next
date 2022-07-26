@@ -30,3 +30,5 @@ yarn-error.log*
 
 #ignore next.js file
 .next/
+
+netlify.toml
