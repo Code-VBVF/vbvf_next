@@ -109,7 +109,11 @@ export default function CareMinistryForm({ closeFunc }) {
           }}
         >
           {({ values }) => (
-            <Form className={styles.careMinistryForm} method="POST">
+            <Form
+              className={styles.careMinistryForm}
+              method="POST"
+              data-netlify={true}
+            >
               <Field
                 type="hidden"
                 name="form-name"
