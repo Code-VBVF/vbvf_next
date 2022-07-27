@@ -69,7 +69,6 @@ const Contact = () => {
             localToSa: "",
           }}
           onSubmit={(values, actions) => {
-            console.log("form is being submitted with these values: ", values);
             fetch("/contact", {
               method: "POST",
               headers: { "Content-Type": "application/x-www-form-urlencoded" },

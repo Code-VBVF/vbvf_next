@@ -206,13 +206,7 @@ export default function CareMinistryForm({ closeFunc }) {
                   </>
                 )}
               </span>
-
-              <Button
-                size="medium"
-                type="submit"
-                title="Submit"
-                color="green"
-              />
+              <button type="submit">Submit</button>
             </Form>
           )}
         </Formik>

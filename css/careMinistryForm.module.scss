@@ -1,3 +1,8 @@
+$gold: #e8b021;
+$lightNavy: #66788d;
+$sand: #dbcca5;
+$darkNavy: #2e3c49;
+$green: #4f5957;
 .careMinistryForm {
   max-width: 400px;
   display: flex;
@@ -21,6 +26,22 @@
     }
   }
 
+  button {
+    margin: 2vh;
+    text-decoration: none;
+    background: $lightNavy;
+    color: white;
+    padding: 5px 10px 5px 10px;
+    border-radius: 15px;
+    font-size: 1.2em;
+    border: 0;
+    transition: background 0.2s;
+    &:hover {
+      background: $darkNavy;
+      text-decoration: none;
+      color: white;
+    }
+  }
   .buttonContainer {
     display: flex;
     flex-direction: row;
