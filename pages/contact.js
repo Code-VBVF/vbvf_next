@@ -70,7 +70,7 @@ const Contact = () => {
           }}
           onSubmit={(values, actions) => {
             console.log("form is being submitted with these values: ", values);
-            fetch("/", {
+            fetch("/contact", {
               method: "POST",
               headers: { "Content-Type": "application/x-www-form-urlencoded" },
               body: encode({ "form-name": "contact", ...values }),
