@@ -71,6 +71,7 @@ const Contact = () => {
             localToSa: "",
           }}
           onSubmit={(values, actions) => {
+            console.log("form is being submitted with these values: ", values);
             fetch("/", {
               method: "POST",
               headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -130,9 +131,8 @@ const Contact = () => {
               data-netlify={true}
               data-netlify-honeypot={`bot-field`}
             >
-              {/* <input type="hidden" name="form-name" value="contact" /> */}
+              <Field type="hidden" name="form-name" value="contact" />
               <Field type="hidden" name="bot-field" />
-              <Field type="hidden" name="form-name" />
               <Field
                 className={styles.contactTextField}
                 name="firstName"
