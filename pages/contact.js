@@ -61,8 +61,6 @@ const Contact = () => {
       ) : (
         <Formik
           initialValues={{
-            "bot-field": "",
-            "form-name": "contact",
             firstName: "",
             lastName: "",
             phoneNumber: "",
@@ -71,7 +69,7 @@ const Contact = () => {
             localToSa: "",
           }}
           onSubmit={(values, actions) => {
-            fetch("/", {
+            fetch("/contact", {
               method: "POST",
               headers: { "Content-Type": "application/x-www-form-urlencoded" },
               body: encode({ "form-name": "contact", ...values }),
@@ -128,11 +126,11 @@ const Contact = () => {
               className={styles.contact}
               name="contact"
               data-netlify={true}
-              netlify-honeypot="bot-field"
+              method="POST"
+              data-netlify-honeypot={`bot-field`}
             >
-              <input type="hidden" name="form-name" value="contact" />
+              <Field type="hidden" name="form-name" value="contact" />
               <Field type="hidden" name="bot-field" />
-              <Field type="hidden" name="form-name" />
               <Field
                 className={styles.contactTextField}
                 name="firstName"
