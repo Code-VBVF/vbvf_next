@@ -128,9 +128,9 @@ const Contact = () => {
               className={styles.contact}
               name="contact"
               data-netlify={true}
-              netlify-honeypot="bot-field"
+              data-netlify-honeypot={`bot-field`}
             >
-              <input type="hidden" name="form-name" value="contact" />
+              {/* <input type="hidden" name="form-name" value="contact" /> */}
               <Field type="hidden" name="bot-field" />
               <Field type="hidden" name="form-name" />
               <Field
