@@ -73,7 +73,7 @@ const Contact = () => {
             fetch("/", {
               method: "POST",
               headers: { "Content-Type": "application/x-www-form-urlencoded" },
-              body: encode({ "form-name": "contactForm", ...values }),
+              body: encode({ "form-name": "contact", ...values }),
             })
               .then(() => {
                 setIsFormSubmitted(true);
@@ -125,12 +125,12 @@ const Contact = () => {
           {(formik) => (
             <Form
               className={styles.contact}
-              name="contactForm"
+              name="contact"
               data-netlify={true}
               method="POST"
               data-netlify-honeypot={`bot-field`}
             >
-              <Field type="hidden" name="form-name" value="contactForm" />
+              <Field type="hidden" name="form-name" value="contact" />
               <Field type="hidden" name="bot-field" />
               <Field
                 className={styles.contactTextField}
