@@ -61,8 +61,6 @@ const Contact = () => {
       ) : (
         <Formik
           initialValues={{
-            "bot-field": "",
-            "form-name": "contact",
             firstName: "",
             lastName: "",
             phoneNumber: "",
@@ -129,11 +127,10 @@ const Contact = () => {
               className={styles.contact}
               name="contact"
               data-netlify="true"
-              method="post"
-              netlify
+              method="POST"
               data-netlify-honeypot={`bot-field`}
             >
-              <Field type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="form-name" value="contact" />
               <Field type="hidden" name="bot-field" />
               <Field
                 className={styles.contactTextField}
