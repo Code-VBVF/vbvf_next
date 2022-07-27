@@ -93,7 +93,7 @@ export default function CareMinistryForm({ closeFunc }) {
             ),
           })}
           onSubmit={(values, actions) => {
-            fetch("/", {
+            fetch("/care-ministry", {
               method: "POST",
               headers: { "Content-Type": "application/x-www-form-urlencoded" },
               body: encode({ "form-name": "care-ministry-contact", ...values }),
@@ -109,13 +109,18 @@ export default function CareMinistryForm({ closeFunc }) {
           }}
         >
           {({ values }) => (
-            <Form className={styles.careMinistryForm} data-netlify={true}>
+            <Form
+              className={styles.careMinistryForm}
+              method="POST"
+              data-netlify-honeypot={`bot-field`}
+              data-netlify={true}
+            >
               <Field
                 type="hidden"
                 name="form-name"
                 value="care-ministry-contact"
               />
-
+              <Field type="hidden" name="bot-field" />
               <h2>Contact Care Ministries</h2>
 
               <label name="fullName">Full Name</label>
