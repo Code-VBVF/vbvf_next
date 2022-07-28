@@ -40,51 +40,6 @@ export default function Home({ isLiveStreamHappening }) {
       return "View past services";
     }
   };
-  // const query = `{'pageData': *[_type == "page" && title == "Home"]{
-  //   paragraphs,
-  //   scripture,
-  //   ministryLeader->
-  // }, 'childrensUnits': *[_type == "childrensUnit"] |order(_createdAt desc)[0...3]{
-  //   title,
-  //   unitNumber,
-  //   seriesImage,
-  // }}`;
-
-  //eslint-disable-next-line
-  // const serializers = {
-  //   //this helps react understand how to present links
-  //   marks: {
-  //     link: ({ mark, children }) => {
-  //       const { href } = mark;
-  //       return <a href={href}>{children}</a>;
-  //     },
-  //     list: (props) => {
-  //       const { type } = props;
-  //       const bullet = type === "bullet";
-  //       if (bullet) {
-  //         return <ul>{props.children}</ul>;
-  //       }
-  //       return <ol>{props.children}</ol>;
-  //     },
-  //     listItem: (props) => <li>{props.children}</li>,
-  //   },
-  // };
-
-  // //eslint-disable-next-line
-  // const [pageData, setPageData] = useState([]);
-  // const [childrensUnits, setChildrensUnits] = useState();
-  // const [pageDataIsLoading, setPageDataIsLoading] = useState(true);
-
-  // useEffect(() => {
-  //   sanity.fetch(query).then((result) => {
-  //     setChildrensUnits(result.childrensUnits);
-  //     setPageData(result.pageData);
-
-  //     setPageDataIsLoading(!pageDataIsLoading);
-  //   });
-  //   //eslint-disable-next-line
-  // }, [query]);
-
   return (
     <div className={homePage.home}>
       <div className={homePage.mainHeader}>

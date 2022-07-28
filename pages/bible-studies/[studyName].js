@@ -13,7 +13,7 @@ export async function getStaticPaths() {
   const res = await sanity.fetch(routeQuery);
   const paths = res.map((study) => {
     return {
-      params: { studyName: study.title.replace(/ /gi, "-") },
+      params: { studyName: study.title.replaceAll(" ", "-") },
     };
   });
   return {
@@ -22,7 +22,8 @@ export async function getStaticPaths() {
   };
 }
 export async function getStaticProps({ params }) {
-  const sanityParams = { studyName: params.studyName.replace(/-/g, " ") };
+  console.log(params);
+  const sanityParams = { studyName: params.studyName.replace(/[-]/g, " ") };
   const query = `*[_type == 'series' && title == $studyName]{
     title, 
     location,
@@ -172,10 +173,16 @@ export default function StudyPage({ data }) {
 
       <div className={styles.lessonList}>
         <h3 className={styles.lessonListTitle}>Lessons</h3>
-        {lessons.map((lesson, index) => {
-          //render lesson block only if there's a meaningful content
-          return hasContent(lesson) && <LessonBlock key={index} {...lesson} />;
-        })}
+        {lessons.length === 0 ? (
+          <p>No lessons yet! Check back later.</p>
+        ) : (
+          lessons.map((lesson, index) => {
+            //render lesson block only if there's a meaningful content
+            return (
+              hasContent(lesson) && <LessonBlock key={index} {...lesson} />
+            );
+          })
+        )}
       </div>
     </div>
   );

@@ -97,8 +97,8 @@ export default function GlobalNav(props) {
                       <p className="contact-page-link">
                         Looking for our <strong>mailing address?</strong> Check
                         out our{" "}
-                        <Link onClick={dualToggle} href="/contact">
-                          <a>Contact Page</a>
+                        <Link href="/contact">
+                          <a onClick={dualToggle}>Contact Page</a>
                         </Link>
                       </p>
                     </div>
