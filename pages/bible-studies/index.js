@@ -24,7 +24,7 @@ export default function StudyAggregator({ data }) {
     <Link
       key={study.title}
       className={styles.studyLink}
-      href={`/bible-studies/${study.title.replace(" ", "-")}`}
+      href={`/bible-studies/${study.title.replace(/\x20+/g, "-")}`}
     >
       <div className={styles.studyIcon}>
         <span
