@@ -11,9 +11,10 @@ import Image from "next/image";
 export async function getStaticPaths() {
   const routeQuery = `*[_type == 'series' && !isVbvmiStudy]|{title}`;
   const res = await sanity.fetch(routeQuery);
+
   const paths = res.map((study) => {
     return {
-      params: { studyName: study.title.replaceAll(" ", "-") },
+      params: { studyName: study.title.replace(/\x20+/g, "-") },
     };
   });
   return {
