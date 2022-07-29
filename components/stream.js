@@ -22,14 +22,8 @@ export default function Stream(props) {
         <ConnectWidget />
         <div className={styles.streamSupportingMaterialsFromCms}>
           <h2>{props.title}</h2>
-          {props.notesUrl && (
+          {props.questionUrl && (
             <div className={styles.documents}>
-              <Button
-                title="Sermon Notes"
-                size="md"
-                color="green"
-                buttonFunc={() => window.open(props.notesUrl)}
-              />
               <Button
                 title="Application Questions"
                 size="md"
