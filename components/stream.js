@@ -13,7 +13,7 @@ export default function Stream(props) {
           title={props.title}
           src={props.streamUrl}
           frameBorder="0"
-          allow="autoplay; fullscreen"
+          allow="autoplay"
           allowFullScreen
         ></iframe>
       </div>

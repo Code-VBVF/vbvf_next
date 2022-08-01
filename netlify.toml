@@ -5,4 +5,12 @@ package = "@netlify/plugin-nextjs"
 command = "yarn next build"
 publish = ".next"
 
-port = 3000
+[functions]
+  node_bundler = "esbuild"
+  
+
+[dev]
+  targetPort = 3000
+
+[context.branch-name.dev]
+  REBUILD_URL = "https://api.netlify.com/build_hooks/62e445dffcc184007f690d77"

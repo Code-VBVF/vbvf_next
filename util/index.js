@@ -108,7 +108,7 @@ export function livestreamHappeningNow() {
   // convert msec value to date string
   const nd = new Date(usa);
 
-  if (process.env.STREAM !== "none") {
+  if (process.env.STREAM != "none") {
     return process.env.STREAM;
   } else {
     if (
