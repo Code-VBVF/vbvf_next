@@ -91,6 +91,7 @@ export default function MensMinistry({ data }) {
           id="dig-deeper"
           className={`${styles.fullWidthRow} ${styles.digDeeper}`}
         >
+          <h4>Dig Deeper</h4>
           <p>
             Weekly, IRON MEN gather to share a meal, pray, and dig deeper into
             God’s Word through focused study of the Bible.
@@ -100,6 +101,7 @@ export default function MensMinistry({ data }) {
           id="accelerate"
           className={`${styles.fullWidthRow} ${styles.accelerate}`}
         >
+          <h4>Accelerate</h4>
           <p>
             Accelerate creates monthly opportunities for men of like interest to
             gather and strengthen relationships through fellowship and service.
@@ -109,6 +111,7 @@ export default function MensMinistry({ data }) {
           id="rally-up"
           className={`${styles.fullWidthRow} ${styles.rallyUp}`}
         >
+          <h4>Rally Up</h4>
           <p>
             This quarterly event is a time of corporate worship, which combines
             fellowship, study and service.
@@ -118,6 +121,7 @@ export default function MensMinistry({ data }) {
           id="retreat"
           className={`${styles.fullWidthRow} ${styles.retreat}`}
         >
+          <h4>Annual Retreat</h4>
           <p>
             The high point of each year, a time to step away from your daily
             routine to reflect, study and praise God’s provision in your life in
