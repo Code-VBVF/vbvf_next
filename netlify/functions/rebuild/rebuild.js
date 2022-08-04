@@ -17,4 +17,4 @@ const handler = async function (event, context) {
   }
 };
 
-module.exports.handler = schedule("@hourly", handler);
+module.exports.handler = schedule("@daily", handler);
