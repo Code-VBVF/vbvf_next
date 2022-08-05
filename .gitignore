@@ -28,7 +28,7 @@ yarn-error.log*
 # ignore temporary files
 *.tmp
 
-#ignore next.js file
-.next/
+#ignore next.js folder
+.next
 # Local Netlify folder
 .netlify

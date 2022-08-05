@@ -2,7 +2,7 @@ import { Html, Main, NextScript, Head } from "next/document";
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html style={{ scrollBehavior: "smooth" }} lang="en">
       <Head>
         <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
         <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
