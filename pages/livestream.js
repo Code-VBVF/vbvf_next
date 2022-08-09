@@ -9,7 +9,7 @@ import MemorialService from "../components/memorial-service";
 
 export async function getServerSideProps() {
   const whichStream = await livestreamHappeningNow();
-  console.log(whichStream);
+  console.log("whichStream:", whichStream);
   if (whichStream === null) {
     const previousServiceVideos = await fetch(
       `https://api.vimeo.com/me/projects/${process.env.VIMEO_FOLDER}/videos?sort=last_user_action_event_date&direction=desc&per_page=3`,
