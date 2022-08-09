@@ -11,10 +11,6 @@ import Preview from "../components/preview";
 import AlertBubble from "../components/alert-bubble";
 import { livestreamHappeningNow } from "../util";
 
-export async function getServerSideProps() {
-  const isLiveStreamHappening = await livestreamHappeningNow();
-  return { props: { isLiveStreamHappening } };
-}
 const monthNames = [
   "January",
   "February",
@@ -32,7 +28,11 @@ const monthNames = [
 // TODO: Create separate constants file
 const BAPTISM_WEEK_NUM = 3;
 
-export default function Home({ isLiveStreamHappening }) {
+export default function Home() {
+  const [isLiveStreamHappening, setIsLiveStreamHappening] = useState(false);
+  useEffect(() => {
+    setIsLiveStreamHappening(livestreamHappeningNow());
+  }, []);
   const liveStreamButtonText = () => {
     if (isLiveStreamHappening) {
       return "View livestream";
