@@ -49,8 +49,8 @@ export async function getServerSideProps() {
       return process.env.STREAM;
     } else {
       if (
-        nd.getDay() === 2 && //wednesday | temporarily changed this for testing
-        nd.getHours() >= 14 && //between 6pm | temporarily changed this for testing
+        nd.getDay() === 3 && //wednesday
+        nd.getHours() >= 18 && //between 6pm
         nd.getHours() <= 21 // and 9pm
       ) {
         return "wednesday";
