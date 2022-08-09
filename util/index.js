@@ -112,8 +112,8 @@ export function livestreamHappeningNow() {
     return process.env.STREAM;
   } else {
     if (
-      nd.getDay() === 2 && //wednesday
-      nd.getHours() >= 14 && //between 6pm
+      nd.getDay() === 2 && //wednesday | temporarily changed this for testing
+      nd.getHours() >= 14 && //between 6pm | temporarily changed this for testing
       nd.getHours() <= 21 // and 9pm
     ) {
       return "wednesday";
