@@ -28,11 +28,11 @@ const monthNames = [
 // TODO: Create separate constants file
 const BAPTISM_WEEK_NUM = 3;
 
-export default function Home() {
-  const [isLiveStreamHappening, setIsLiveStreamHappening] = useState(false);
-  useEffect(() => {
-    setIsLiveStreamHappening(livestreamHappeningNow());
-  }, []);
+export async function getServerSideProps() {
+  const isLiveStreamHappening = await livestreamHappeningNow();
+  return { props: { isLiveStreamHappening } };
+}
+export default function Home({ isLiveStreamHappening }) {
   const liveStreamButtonText = () => {
     if (isLiveStreamHappening) {
       return "View livestream";

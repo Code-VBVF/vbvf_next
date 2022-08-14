@@ -72,7 +72,7 @@ export function sanityFormatTodaysDate() {
   return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 }
 
-export function livestreamHappeningNow() {
+export async function livestreamHappeningNow() {
   // Get time zone offset for NY, USA
   const getCstOffset = () => {
     const stdTimezoneOffset = () => {
@@ -106,7 +106,7 @@ export function livestreamHappeningNow() {
   const usa = utcTime + 60 * 60 * 1000 * cstOffset;
 
   // convert msec value to date string
-  const nd = new Date(usa);
+  const nd = await new Date(usa);
 
   if (process.env.STREAM != "none") {
     return process.env.STREAM;
