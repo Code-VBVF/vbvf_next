@@ -44,7 +44,7 @@ export async function getServerSideProps() {
 
     // convert msec value to date string
     const nd = await new Date(usa);
-
+    console.log("time is: ", nd.getDay(), nd.getHours());
     if (process.env.STREAM != "none") {
       return process.env.STREAM;
     } else {
@@ -67,6 +67,7 @@ export async function getServerSideProps() {
   //
   const whichStream = await livestreamHappeningNow();
   console.log("whichStream:", whichStream);
+
   if (whichStream === null) {
     const previousServiceVideos = await fetch(
       `https://api.vimeo.com/me/projects/${process.env.VIMEO_FOLDER}/videos?sort=last_user_action_event_date&direction=desc&per_page=3`,
