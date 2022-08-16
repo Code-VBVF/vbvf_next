@@ -29,6 +29,6 @@ yarn-error.log*
 *.tmp
 
 #ignore next.js folder
-.next
+.next/
 # Local Netlify folder
 .netlify

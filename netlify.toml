@@ -4,6 +4,7 @@ package = "@netlify/plugin-nextjs"
 [build]
 command = "yarn next build"
 publish = ".next"
+TZ='America/Chicago'
 
 [functions]
   node_bundler = "esbuild"

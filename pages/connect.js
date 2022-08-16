@@ -23,21 +23,17 @@ const ConnectPage = () => {
       <h1>Connect Here.</h1>
       <div className={styles.firstRow}>
         <div className={styles.connectionMeeting}>
-          <h2>Connection Meeting</h2>
+          <h2>Connect Card</h2>
           <p>
             We love seeing so many new faces at VBVF and would love to meet you!
-            Come to one of the Connection Meetings immediately after worship
-            service on the last Sunday of every month. We will meet you in the
-            flex room for a quick informational gathering to learn more about
-            VBVF. One of our pastors will give a quick overview of all the great
-            things happening at VBVF and answer any questions you might have.
+            The best way for us to start that process is for you to fill out a
+            Connect Card. When you fill out the Connect Card you'll have an
+            opportunity to request information about various ministries and
+            events that we provide.
           </p>
-
           <ConnectionStep
-            copy=" We would love to contact you. Please submit a connection card using
-            the button below."
             link="https://vbvf.churchcenter.com/people/forms/26636?open-in-church-center-modal=true"
-            buttonText="Connection Card"
+            buttonText="Fill out Connect Card"
           />
         </div>
         <div className={styles.connectionImage}>
