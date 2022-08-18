@@ -19,7 +19,7 @@ export async function getServerSideProps() {
       };
 
       var today = new Date();
-      console.log(today.getTimezoneOffset());
+      console.log("offset: ", today.getTimezoneOffset());
       const isDstObserved = (today) => {
         return today.getTimezoneOffset() < stdTimezoneOffset();
       };
