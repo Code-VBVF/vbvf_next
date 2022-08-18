@@ -13,8 +13,8 @@ export async function getServerSideProps() {
     // Get time zone offset for NY, USA
     const getCstOffset = () => {
       const stdTimezoneOffset = () => {
-        var jan = new Date(0, 1);
-        var jul = new Date(6, 1);
+        var jan = new Date(0, 1); //creating date for january 1
+        var jul = new Date(6, 1); // creating date for july 1
         return Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
       };
 
@@ -45,6 +45,9 @@ export async function getServerSideProps() {
     // convert msec value to date string
     const nd = await new Date(usa);
     console.log("time is: ", nd.getDay(), nd.getHours());
+    const timeNow = await new Date();
+    console.log(timeNow.getHours());
+
     if (process.env.STREAM != "none") {
       return process.env.STREAM;
     } else {
