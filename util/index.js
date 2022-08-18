@@ -1,5 +1,6 @@
 import axios from "axios";
 import imageUrlBuilder from "@sanity/image-url";
+import { DateTime } from "luxon";
 
 const SanityClient = require("@sanity/client");
 
@@ -73,54 +74,21 @@ export function sanityFormatTodaysDate() {
 }
 
 export async function livestreamHappeningNow() {
-  // Get time zone offset for NY, USA
-  const getCstOffset = () => {
-    const stdTimezoneOffset = () => {
-      var jan = new Date(0, 1);
-      var jul = new Date(6, 1);
-      return Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
-    };
-
-    var today = new Date();
-    console.log(today.getTimezoneOffset());
-    const isDstObserved = (today) => {
-      return today.getTimezoneOffset() < stdTimezoneOffset();
-    };
-
-    if (isDstObserved(today)) {
-      return -5;
-    } else {
-      return -6;
-    }
-  };
-
-  const d = new Date();
-  // convert to msec since Jan 1 1970
-  const localTime = d.getTime();
-  // obtain local UTC offset and convert to msec
-  const localOffset = d.getTimezoneOffset() * 60 * 1000;
-  // obtain UTC time in msec
-  const utcTime = localTime + localOffset;
-  // obtain and add destination's UTC time offset
-  const cstOffset = getCstOffset();
-  const usa = utcTime + 60 * 60 * 1000 * cstOffset;
-
-  // convert msec value to date string
-  const nd = await new Date(usa);
+  const nd = await DateTime.fromObject({}, { zone: "America/Chicago" });
 
   if (process.env.STREAM != "none") {
     return process.env.STREAM;
   } else {
     if (
-      nd.getDay() === 2 && //wednesday | temporarily changed this for testing
-      nd.getHours() >= 14 && //between 6pm | temporarily changed this for testing
-      nd.getHours() <= 21 // and 9pm
+      nd.day === 3 && //wednesday
+      nd.hour >= 18 && //between 6pm
+      nd.hour <= 21 // and 9pm
     ) {
       return "wednesday";
     } else if (
-      nd.getDay() === 0 && //sunday
-      nd.getHours() >= 10 && //between 10am
-      nd.getHours() <= 13 // and 1pm
+      nd.day === 0 && //sunday
+      nd.hour >= 10 && //between 10am
+      nd.hour <= 13 // and 1pm
     ) {
       return "sunday";
     }

@@ -11,48 +11,7 @@ import { DateTime } from "luxon";
 export async function getServerSideProps() {
   // util function
   async function livestreamHappeningNow() {
-    // // Get time zone offset for NY, USA
-    // const getCstOffset = () => {
-    //   const stdTimezoneOffset = () => {
-    //     var jan = new Date(0, 1); //creating date for january 1
-    //     var jul = new Date(6, 1); // creating date for july 1
-
-    //     console.log("jan ", jan.getTimezoneOffset());
-    //     console.log("july ", jul.getTimezoneOffset());
-    //     return Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
-    //   };
-
-    //   var today = new Date();
-    //   console.log("offset: ", today.getTimezoneOffset());
-    //   const isDstObserved = (today) => {
-    //     return today.getTimezoneOffset() !== stdTimezoneOffset();
-    //   };
-    //   console.log(isDstObserved(today));
-    //   if (isDstObserved(today)) {
-    //     return -5;
-    //   } else {
-    //     return -6;
-    //   }
-    // };
-
-    // const d = new Date();
-    // // convert to msec since Jan 1 1970
-    // const localTime = d.getTime();
-    // console.log("local time offset", d.getTimezoneOffset());
-    // // obtain local UTC offset and convert to msec
-    // const localOffset = d.getTimezoneOffset() * 60 * 1000;
-    // // obtain UTC time in msec
-    // const utcTime = localTime + localOffset;
-
-    // // obtain and add destination's UTC time offset
-    // const cstOffset = getCstOffset();
-
-    // const usa = utcTime + 60 * 60 * 1000 * cstOffset;
-
-    // // convert msec value to date string
-    // const nd = await new Date(usa);
-    // console.log("time is: ", nd.getHours());
-    const nd = DateTime.fromObject({}, { zone: "America/Chicago" });
+    const nd = await DateTime.fromObject({}, { zone: "America/Chicago" });
 
     if (process.env.STREAM != "none") {
       return process.env.STREAM;
@@ -73,7 +32,7 @@ export async function getServerSideProps() {
     }
     return null;
   }
-  //
+
   const whichStream = await livestreamHappeningNow();
 
   if (whichStream === null) {
