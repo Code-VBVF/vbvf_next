@@ -16,6 +16,7 @@
     "dotenv": "^8.2.0",
     "formik": "^2.1.4",
     "framer-motion": "^1.11.1",
+    "netlify-cli": "^10.17.8",
     "next": "^12.2.0",
     "next-sanity-image": "^3.2.1",
     "node-fetch": "^3.2.9",
