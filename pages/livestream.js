@@ -6,61 +6,67 @@ import Stream from "../components/stream";
 import { sanity } from "../util/index";
 import styles from "../css//livestream.module.scss";
 import MemorialService from "../components/memorial-service";
+import { DateTime } from "luxon";
 
 export async function getServerSideProps() {
   // util function
   async function livestreamHappeningNow() {
-    // Get time zone offset for NY, USA
-    const getCstOffset = () => {
-      const stdTimezoneOffset = () => {
-        var jan = new Date(0, 1); //creating date for january 1
-        var jul = new Date(6, 1); // creating date for july 1
-        return Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
-      };
+    // // Get time zone offset for NY, USA
+    // const getCstOffset = () => {
+    //   const stdTimezoneOffset = () => {
+    //     var jan = new Date(0, 1); //creating date for january 1
+    //     var jul = new Date(6, 1); // creating date for july 1
 
-      var today = new Date();
-      console.log("offset: ", today.getTimezoneOffset());
-      const isDstObserved = (today) => {
-        return today.getTimezoneOffset() < stdTimezoneOffset();
-      };
+    //     console.log("jan ", jan.getTimezoneOffset());
+    //     console.log("july ", jul.getTimezoneOffset());
+    //     return Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
+    //   };
 
-      if (isDstObserved(today)) {
-        return -5;
-      } else {
-        return -6;
-      }
-    };
+    //   var today = new Date();
+    //   console.log("offset: ", today.getTimezoneOffset());
+    //   const isDstObserved = (today) => {
+    //     return today.getTimezoneOffset() !== stdTimezoneOffset();
+    //   };
+    //   console.log(isDstObserved(today));
+    //   if (isDstObserved(today)) {
+    //     return -5;
+    //   } else {
+    //     return -6;
+    //   }
+    // };
 
-    const d = new Date();
-    // convert to msec since Jan 1 1970
-    const localTime = d.getTime();
-    // obtain local UTC offset and convert to msec
-    const localOffset = d.getTimezoneOffset() * 60 * 1000;
-    // obtain UTC time in msec
-    const utcTime = localTime + localOffset;
-    // obtain and add destination's UTC time offset
-    const cstOffset = getCstOffset();
-    const usa = utcTime + 60 * 60 * 1000 * cstOffset;
+    // const d = new Date();
+    // // convert to msec since Jan 1 1970
+    // const localTime = d.getTime();
+    // console.log("local time offset", d.getTimezoneOffset());
+    // // obtain local UTC offset and convert to msec
+    // const localOffset = d.getTimezoneOffset() * 60 * 1000;
+    // // obtain UTC time in msec
+    // const utcTime = localTime + localOffset;
 
-    // convert msec value to date string
-    const nd = await new Date(usa);
-    console.log("time is: ", nd.getDay(), nd.getHours());
-    const timeNow = await new Date();
-    console.log(timeNow.getHours());
+    // // obtain and add destination's UTC time offset
+    // const cstOffset = getCstOffset();
+
+    // const usa = utcTime + 60 * 60 * 1000 * cstOffset;
+
+    // // convert msec value to date string
+    // const nd = await new Date(usa);
+    // console.log("time is: ", nd.getHours());
+    const nd = DateTime.fromObject({}, { zone: "America/Chicago" });
 
     if (process.env.STREAM != "none") {
       return process.env.STREAM;
     } else {
       if (
-        nd.getDay() === 3 && //wednesday
-        nd.getHours() >= 18 && //between 6pm
-        nd.getHours() <= 21 // and 9pm
+        nd.day === 3 && //wednesday
+        nd.hour >= 18 && //between 6pm
+        nd.hour <= 21 // and 9pm
       ) {
         return "wednesday";
       } else if (
-        nd.getDay() === 0 && //sunday
-        nd.getHours() >= 10 && //between 10am
-        nd.getHours() <= 13 // and 1pm
+        nd.day === 0 && //sunday
+        nd.hour >= 10 && //between 10am
+        nd.hour <= 13 // and 1pm
       ) {
         return "sunday";
       }
@@ -69,7 +75,6 @@ export async function getServerSideProps() {
   }
   //
   const whichStream = await livestreamHappeningNow();
-  console.log("whichStream:", whichStream);
 
   if (whichStream === null) {
     const previousServiceVideos = await fetch(
