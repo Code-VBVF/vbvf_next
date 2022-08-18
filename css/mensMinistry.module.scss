@@ -69,7 +69,8 @@
       background-attachment: fixed;
 
       background-repeat: no-repeat;
-      clip-path: circle(50% at center);
+      mask-image: url(../public/images/mens-ministry/pick-and-shovel.svg);
+      // clip-path: circle(50% at center);
     }
   }
   .fullWidthRow.accelerate {
