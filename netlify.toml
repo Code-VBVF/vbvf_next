@@ -4,6 +4,8 @@ package = "@netlify/plugin-nextjs"
 [build]
 command = "yarn next build"
 publish = ".next"
+
+[build.environment]
 TZ='America/Chicago'
 
 [functions]
