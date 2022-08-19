@@ -45,52 +45,8 @@ export default function MensMinistry({ data }) {
       </div>
 
       <h2>Events</h2>
-      <div className={`${styles.row} ${styles.events}`}>
-        <Link href={"#dig-deeper"}>
-          <div className={styles.event}>
-            <h3>Dig Deeper</h3>
-            <span className={styles.eventImage}>
-              <div className={styles.imageContainer}>
-                <Image src={Shovel} />
-              </div>
-            </span>
-            <h4>Weekly</h4>
-          </div>
-        </Link>
-        <Link href={"#accelerate"}>
-          <div className={styles.event}>
-            <h3>Accelerate</h3>
-            <span className={styles.eventImage}>
-              <div className={styles.imageContainer}>
-                <Image src={Accelerate} />
-              </div>
-            </span>
-            <h4>Monthly</h4>
-          </div>
-        </Link>
-        <Link href={"#rally-up"}>
-          <div className={styles.event}>
-            <h3>Rally Up</h3>
-            <span className={styles.eventImage}>
-              <Image src={HoldingBible} />
-            </span>
-            <h4>Quarterly</h4>
-          </div>
-        </Link>
-        <Link href={"#retreat"}>
-          <div className={styles.event}>
-            <h3>Retreat</h3>
-            <span className={styles.eventImage}>
-              <div className={styles.imageContainer}>
-                <Image src={ClimbingStairs} />
-              </div>
-            </span>
-            <h4>Yearly</h4>
-          </div>
-        </Link>
-      </div>
-      <div>
-        <div id="dig-deeper" className={styles.fullWidthRow}>
+      <div className={styles.events}>
+        <div id className={styles.event}>
           <div className={styles.eventDetails}>
             <h4>Dig Deeper</h4>
             <p>
@@ -106,54 +62,55 @@ export default function MensMinistry({ data }) {
           </div>
           <div className={`${styles.imageFeature} ${styles.digDeeper}`} />
         </div>
-        <div
-          id="accelerate"
-          className={`${styles.fullWidthRow} ${styles.accelerate}`}
-        >
-          <h4>Accelerate</h4>
-          <p>
-            Accelerate creates monthly opportunities for men of like interest to
-            gather and strengthen relationships through fellowship and service.
-          </p>
-          <Button
-            title="RSVP for Accelerate"
-            link="https://vbvf.churchcenter.com/registrations/events/category/18785"
-            size="medium"
-            color="bone"
-          />
+        <div className={styles.event}>
+          <div className={styles.eventDetails}>
+            <h4>Accelerate</h4>
+            <p>
+              Accelerate creates monthly opportunities for men of like interest
+              to gather and strengthen relationships through fellowship and
+              service.
+            </p>
+            <Button
+              title="RSVP for Accelerate"
+              link="https://vbvf.churchcenter.com/registrations/events/category/18785"
+              size="medium"
+              color="green"
+            />
+          </div>
+          <div className={`${styles.imageFeature} ${styles.accelerate}`} />
         </div>
-        <div
-          id="rally-up"
-          className={`${styles.fullWidthRow} ${styles.rallyUp}`}
-        >
-          <h4>Rally Up</h4>
-          <p>
-            This quarterly event is a time of corporate worship, which combines
-            fellowship, study and service.
-          </p>
-          <Button
-            title="Get Rally Up info"
-            link="https://vbvf.churchcenter.com/registrations/events/category/18785"
-            size="medium"
-            color="bone"
-          />
+        <div id className={styles.event}>
+          <div className={styles.eventDetails}>
+            <h4>Rally Up</h4>
+            <p>
+              This quarterly event is a time of corporate worship, which
+              combines fellowship, study and service.
+            </p>
+            <Button
+              title="Get Rally Up info"
+              link="https://vbvf.churchcenter.com/registrations/events/category/18785"
+              size="medium"
+              color="green"
+            />
+          </div>
+          <div className={`${styles.imageFeature} ${styles.rallyUp}`} />
         </div>
-        <div
-          id="retreat"
-          className={`${styles.fullWidthRow} ${styles.retreat}`}
-        >
-          <h4>Annual Retreat</h4>
-          <p>
-            The high point of each year, a time to step away from your daily
-            routine to reflect, study and praise God’s provision in your life in
-            a serene setting.
-          </p>
-          <Button
-            title="Register for retreat"
-            link="https://vbvf.churchcenter.com/registrations/events/category/18785"
-            size="medium"
-            color="bone"
-          />
+        <div className={styles.event}>
+          <div className={styles.eventDetails}>
+            <h4>Annual Retreat</h4>
+            <p>
+              The high point of each year, a time to step away from your daily
+              routine to reflect, study and praise God’s provision in your life
+              in a serene setting.
+            </p>
+            <Button
+              title="Register for retreat"
+              link="https://vbvf.churchcenter.com/registrations/events/category/18785"
+              size="medium"
+              color="green"
+            />
+          </div>
+          <div className={`${styles.imageFeature} ${styles.retreat}`} />
         </div>
       </div>
       {pageData.ministryLeader && (
