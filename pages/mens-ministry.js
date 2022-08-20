@@ -34,7 +34,7 @@ export default function MensMinistry({ data }) {
       <h1>Ironmen</h1>
       <div className={styles.row}>
         <PortableText
-          renderContainerOnSingleChild={true}
+          renderContainerOnSingleChild={false}
           blocks={pageData.paragraphs[0].bodyText}
           serializers={serializers}
         />
