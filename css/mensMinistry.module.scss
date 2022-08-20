@@ -28,14 +28,12 @@
     margin: 3vh 0 0 0;
     display: flex;
     flex-direction: column-reverse;
-
     align-items: center;
     .eventDetails {
       display: flex;
       margin: 2vh 0 0 0;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       p {
         width: 70%;
       }
@@ -100,8 +98,6 @@
       }
     }
     .event {
-      flex-direction: column-reverse;
-      align-items: center;
       height: auto;
       margin: 0 0 0 0;
       .eventDetails {
@@ -111,7 +107,6 @@
         }
       }
       .imageFeature {
-        width: 60%;
         height: 40vh;
       }
     }
