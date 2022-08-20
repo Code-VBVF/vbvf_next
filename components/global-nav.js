@@ -138,6 +138,13 @@ export default function GlobalNav(props) {
                   </NavItem>
                 </DropdownItem>
                 <DropdownItem>
+                  <NavItem>
+                    <NavLink className={styles.subMenu} href="/mens-ministry">
+                      Men's Ministry
+                    </NavLink>
+                  </NavItem>
+                </DropdownItem>
+                <DropdownItem>
                   <NavLink className={styles.subMenu} href="/small-groups">
                     Small Groups
                   </NavLink>

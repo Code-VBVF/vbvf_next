@@ -109,8 +109,9 @@ $green: #4f5957;
     &Mission {
       width: 100%;
       flex-direction: column;
-      p {
-        width: 100%;
+      padding: 0;
+      &Paragraph {
+        width: 90%;
         margin: 0 0 5vh 0;
       }
     }
