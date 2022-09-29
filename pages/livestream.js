@@ -13,6 +13,8 @@ export async function getServerSideProps() {
   async function livestreamHappeningNow() {
     const nd = await DateTime.fromObject({}, { zone: "America/Chicago" });
 
+    console.log(`time: ${nd.day}, ${nd.hour}`);
+
     if (process.env.STREAM != "none") {
       return process.env.STREAM;
     } else {
