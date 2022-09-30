@@ -4,7 +4,9 @@
   align-items: center;
   margin: 5vh 0 0 0;
   padding: 20px;
-
+  .imLogo {
+    width: 70%;
+  }
   .row {
     width: 80%;
     display: flex;
@@ -34,6 +36,7 @@
       margin: 2vh 0 0 0;
       flex-direction: column;
       align-items: center;
+
       p {
         width: 70%;
       }
@@ -44,70 +47,36 @@
       height: 30vh;
       max-height: 373px;
       overflow: hidden;
+      border-radius: 15px;
     }
-    .digDeeper {
-      background: url(../public/images/mens-ministry/trail.jpg);
-      background-attachment: fixed;
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      mask-image: url(../public/images/mens-ministry/pick-and-shovel.svg);
-      mask-repeat: no-repeat;
-      mask-position: center;
-      mask-size: contain;
-    }
-  }
-  .accelerate {
-    background: url(../public/images/mens-ministry/racetrack.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: bottom;
-    mask-image: url(../public/images/mens-ministry/checkered-flag.svg);
-    mask-repeat: no-repeat;
-    mask-position: center;
-    mask-size: contain;
-  }
-  .rallyUp {
-    background: url(../public/images/mens-ministry/handshake_compressed.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    mask-image: url(../public/images/mens-ministry/group.svg);
-    mask-repeat: no-repeat;
-    mask-position: center;
-    mask-size: contain;
-  }
-  .retreat {
-    background: url(../public/images/mens-ministry/hiking.jpg) no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    mask-image: url(../public/images/mens-ministry/fire.svg);
-    mask-repeat: no-repeat;
-    mask-position: center;
-    mask-size: contain;
   }
 }
 @media screen and (max-width: 768px) {
   .mensMinistry {
+    .imLogo {
+      width: 100%;
+    }
     .row {
-      width: 95%;
+      width: 100%;
       flex-direction: column-reverse;
       p {
-        width: 95%;
+        width: 98%;
       }
     }
     .event {
-      height: auto;
-      margin: 0 0 0 0;
+      margin: 3vh 0 0 0;
+
       .eventDetails {
         width: 100%;
+        padding: 20px;
         p {
           width: 90%;
         }
       }
       .imageFeature {
-        height: 40vh;
+        width: 100%;
+        height: auto;
+        border-radius: 0px;
       }
     }
   }
