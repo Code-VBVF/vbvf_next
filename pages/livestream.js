@@ -13,21 +13,15 @@ export async function getServerSideProps() {
   async function livestreamHappeningNow() {
     const nd = await DateTime.fromObject({}, { zone: "America/Chicago" });
 
-    console.log(`time: ${nd.day}, ${nd.hour}`);
-
     if (process.env.STREAM != "none") {
       return process.env.STREAM;
     } else {
       if (
-        nd.day === 3 && //wednesday
-        nd.hour >= 18 && //between 6pm
-        nd.hour <= 21 // and 9pm
+        nd.day === 3 //wednesday
       ) {
         return "wednesday";
       } else if (
-        nd.day === 0 && //sunday
-        nd.hour >= 10 && //between 10am
-        nd.hour <= 13 // and 1pm
+        nd.day === 0 //sunday
       ) {
         return "sunday";
       }
