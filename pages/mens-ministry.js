@@ -6,12 +6,13 @@ import ScriptureVerse from "../components/scripture-verse";
 import PortableText from "@sanity/block-content-to-react";
 import StaffInfo from "../components/staff-info";
 import Image from "next/image";
-import Shovel from "../public/images/mens-ministry/shovel_compressed.jpeg";
-import Accelerate from "../public/images/mens-ministry/speedometer_compressed.jpeg";
-import HoldingBible from "../public/images/mens-ministry/holding-bible_compressed.jpg";
-import ClimbingStairs from "../public/images/mens-ministry/climbing-stairs.jpg";
-import SvgMask from "../public/images/mens-ministry/svg_mask.svg";
-import Link from "next/link";
+import DigDeeper from "../public/images/mens-ministry/dig-deeper.webp";
+import Accelerate from "../public/images/mens-ministry/accelerate.webp";
+import RallyUp from "../public/images/mens-ministry/rally-up.webp";
+import Retreat from "../public/images/mens-ministry/retreat.jpg";
+// import IronmenLogo from "../public/images/mens-ministry/im-logo.webp";
+import IronmenLogo from "../public/images/mens-ministry/im-logo-cutout.png";
+
 import Button from "../components/button";
 
 export async function getStaticProps() {
@@ -31,7 +32,9 @@ export default function MensMinistry({ data }) {
   const [pageData, setPageData] = useState(data);
   return (
     <div className={styles.mensMinistry}>
-      <h1>Ironmen</h1>
+      <div className={styles.imLogo}>
+        <Image src={IronmenLogo} layout="intrinsic" />
+      </div>
       <div className={styles.row}>
         <PortableText
           renderContainerOnSingleChild={false}
@@ -60,7 +63,14 @@ export default function MensMinistry({ data }) {
               color="green"
             />
           </div>
-          <div className={`${styles.imageFeature} ${styles.digDeeper}`} />
+          <div className={`${styles.imageFeature}`}>
+            <Image
+              src={DigDeeper}
+              width={500}
+              height={500}
+              layout="intrinsic"
+            />
+          </div>
         </div>
         <div className={styles.event}>
           <div className={styles.eventDetails}>
@@ -77,7 +87,14 @@ export default function MensMinistry({ data }) {
               color="green"
             />
           </div>
-          <div className={`${styles.imageFeature} ${styles.accelerate}`} />
+          <div className={`${styles.imageFeature}`}>
+            <Image
+              src={Accelerate}
+              width={500}
+              height={500}
+              layout="intrinsic"
+            />
+          </div>
         </div>
         <div id className={styles.event}>
           <div className={styles.eventDetails}>
@@ -93,7 +110,9 @@ export default function MensMinistry({ data }) {
               color="green"
             />
           </div>
-          <div className={`${styles.imageFeature} ${styles.rallyUp}`} />
+          <div className={`${styles.imageFeature}`}>
+            <Image src={RallyUp} width={500} height={500} layout="intrinsic" />
+          </div>
         </div>
         <div className={styles.event}>
           <div className={styles.eventDetails}>
@@ -110,7 +129,10 @@ export default function MensMinistry({ data }) {
               color="green"
             />
           </div>
-          <div className={`${styles.imageFeature} ${styles.retreat}`} />
+          <div className={`${styles.imageFeature}`}>
+            <Image src={Retreat} width={500} height={500} layout="intrinsic" />
+          </div>
+          {/* <div className={`${styles.imageFeature} ${styles.retreat}`} /> */}
         </div>
       </div>
       {pageData.ministryLeader && (
