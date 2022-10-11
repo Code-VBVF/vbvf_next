@@ -9,6 +9,7 @@ import Image from "next/image";
 import DigDeeper from "../public/images/mens-ministry/dig-deeper.webp";
 import Accelerate from "../public/images/mens-ministry/accelerate.webp";
 import RallyUp from "../public/images/mens-ministry/rally-up.webp";
+import Retreat from "../public/images/mens-ministry/retreat.jpg";
 // import IronmenLogo from "../public/images/mens-ministry/im-logo.webp";
 import IronmenLogo from "../public/images/mens-ministry/im-logo-cutout.png";
 
@@ -129,12 +130,7 @@ export default function MensMinistry({ data }) {
             />
           </div>
           <div className={`${styles.imageFeature}`}>
-            <Image
-              src={DigDeeper}
-              width={500}
-              height={500}
-              layout="intrinsic"
-            />
+            <Image src={Retreat} width={500} height={500} layout="intrinsic" />
           </div>
           {/* <div className={`${styles.imageFeature} ${styles.retreat}`} /> */}
         </div>
