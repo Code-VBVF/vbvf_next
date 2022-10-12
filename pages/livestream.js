@@ -123,8 +123,7 @@ export default function Livestream({ data, previousVideos, whichStream }) {
         <MemorialService />
       ) : whichStream === "guestTeacher" ? ( //returning component with no description for guest teacher
         <Stream
-          streamUrl="https://vimeo.com/event/51649/embed"
-          title=""
+          streamUrl="https://vimeo.com/event/2469882/embed"
           description=""
         />
       ) : whichStream === "christmas" ? ( //returning component with no description for guest teacher
